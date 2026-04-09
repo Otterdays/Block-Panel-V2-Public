@@ -190,10 +190,7 @@
   dlButtons.forEach(btn => {
     if (!btn) return;
     btn.addEventListener('click', (e) => {
-      // Only log for direct download links, not internal anchor navigation
-      if (btn.hasAttribute('download')) {
-        console.info('[BlockPanel] Download initiated:', btn.getAttribute('href'));
-      }
+      console.info('[BlockPanel] Download click:', btn.getAttribute('href'));
     });
   });
 })();
