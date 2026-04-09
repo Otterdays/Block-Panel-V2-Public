@@ -194,3 +194,15 @@
     });
   });
 })();
+
+// ── Theme Swatch interactivity ──────────────────────────────
+(function initThemeInteractivity() {
+  const swatches = document.querySelectorAll('.theme-swatch');
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      const name = swatch.getAttribute('data-name');
+      console.info('[BlockPanel] Theme preview selected:', name);
+    });
+  });
+})();
+

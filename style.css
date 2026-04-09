@@ -597,6 +597,7 @@ code {
   background: radial-gradient(ellipse at center, #4ade801a 0%, transparent 70%);
   pointer-events: none;
 }
+
 .download-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -678,6 +679,123 @@ code {
   text-align: center;
 }
 .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+
+/* ── Themes Showcase Styles ────────────────────────────────── */
+.themes { background: var(--bg); position: relative; overflow: hidden; }
+.themes-bg-blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: var(--accent-glow);
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+.themes-showcase {
+  margin-bottom: 48px;
+  position: relative;
+}
+.theme-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 20px 0 40px;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.theme-strip::-webkit-scrollbar { display: none; }
+.theme-swatch {
+  flex: 0 0 160px;
+  height: 220px;
+  background: var(--swatch-bg);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.theme-swatch::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: var(--swatch-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--swatch-accent);
+}
+.theme-swatch span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+.theme-swatch:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+.theme-swatch:hover span { transform: translateY(-4px); }
+.theme-swatch::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #fff;
+  white-space: nowrap;
+}
+.theme-swatch:active::after { opacity: 1; }
+
+.themes-description {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.theme-cat h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.theme-cat p { font-size: 13px; color: var(--text-muted); }
+
+/* ── Tech Specs Styles ─────────────────────────────────────── */
+.specs { background: var(--bg2); }
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.spec-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: var(--radius);
+  transition: background 0.3s;
+}
+.spec-item:hover { background: var(--surface2); }
+.spec-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.spec-value { font-size: 15px; font-weight: 500; color: var(--text); }
+
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
