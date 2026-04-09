@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlockPanel — Minecraft Server Manager for Windows</title>
+  <meta name="description" content="BlockPanel is a native, standalone Minecraft server manager for Windows. Start, stop, manage mods, and monitor your server — no terminal required." />
+  <meta property="og:title" content="BlockPanel — Minecraft Server Manager" />
+  <meta property="og:description" content="Native, lightweight Minecraft server control. No command line required." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="BlockPanel home">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/>
+            <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
+            <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
+            <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <span>BlockPanel</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#portable">Portable Mode</a></li>
+        <li><a href="#download" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#portable">Portable Mode</a>
+      <a href="#download">Download</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text reveal">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Windows Desktop Application</span>
+        </div>
+        <h1>Manage your Minecraft server.<br /><span class="gradient-text">Without the terminal.</span></h1>
+        <p class="hero-subtitle">BlockPanel is a native, standalone manager for Windows. Start, stop, monitor, and configure your Minecraft server from a clean, modern interface.</p>
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary" id="hero-download-btn">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download Free
+          </a>
+          <a href="#features" class="btn btn-ghost">Explore Features →</a>
+        </div>
+        <div class="hero-meta">
+          <span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 12.5A5.5 5.5 0 118 2.5a5.5 5.5 0 010 11zm.75-5.75V5a.75.75 0 00-1.5 0v3.5l2.25 1.5a.75.75 0 00.75-1.3l-1.5-1z" fill="currentColor"/></svg>
+            Free & open source
+          </span>
+          <span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33C3.72 14.36 3.26 13 3.26 13c-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.23 1.87.87 2.33.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.62 7.62 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z" fill="currentColor"/></svg>
+            Built with Tauri & Rust
+          </span>
+          <span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z" fill="currentColor"/></svg>
+            Windows 10 / 11
+          </span>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
+        <div class="app-mockup">
+          <div class="mockup-titlebar">
+            <span class="titlebar-dot red"></span>
+            <span class="titlebar-dot yellow"></span>
+            <span class="titlebar-dot green"></span>
+            <span class="titlebar-name">BlockPanel</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-sidebar">
+              <div class="sidebar-item active">Dashboard</div>
+              <div class="sidebar-item">Console</div>
+              <div class="sidebar-item">Players</div>
+              <div class="sidebar-item">Mods</div>
+              <div class="sidebar-item">World Map</div>
+              <div class="sidebar-item">Settings</div>
+            </div>
+            <div class="mockup-main">
+              <div class="mockup-stat-row">
+                <div class="mockup-card">
+                  <div class="stat-label">Status</div>
+                  <div class="stat-value green">Online</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="stat-label">Players</div>
+                  <div class="stat-value">3 / 20</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="stat-label">Uptime</div>
+                  <div class="stat-value">4h 22m</div>
+                </div>
+              </div>
+              <div class="mockup-console">
+                <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Server Online</div>
+                <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Ryan joined the game</div>
+                <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-warn">WARN</span> Saving chunks...</div>
+                <div class="console-line typing"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Entities: 204<span class="cursor-blink">▋</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section id="features" class="section features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Features</div>
+        <h2>Everything you need.<br />Nothing you don't.</h2>
+        <p>BlockPanel packs a professional-grade toolset into a lightweight, zero-dependency desktop app.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>One-Click Lifecycle</h3>
+          <p>Start, stop, restart, and force-kill your server with single button clicks. Automatic restart on crash with configurable delay.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Live Console</h3>
+          <p>Real-time log streaming direct from the Java process. Syntax-highlighted INFO, WARN, ERROR levels. Type commands inline.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10L2 7m10 10L2 17m10-5l10 5M12 17l10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>JAR Manager</h3>
+          <p>Browse and download every Minecraft version — releases and snapshots — directly from Mojang's CDN with live progress tracking.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Modrinth Mod Browser</h3>
+          <p>Search, preview, and one-click install mods and plugins directly from Modrinth. Filter by version, loader, category, and sort by downloads.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>World Map</h3>
+          <p>Render an overhead view of your Minecraft world directly from region files. Pan, zoom, and double-click to copy teleport commands.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Local First · Private</h3>
+          <p>Zero network calls for your data. All configurations, credentials, and server files stay on your machine. No accounts required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it Works ── -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Quick Start</div>
+        <h2>Up and running in minutes.</h2>
+        <p>Three steps from zero to a live Minecraft server.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Download & Install</h3>
+            <p>Grab the NSIS installer or MSI package below. Run it — no dependencies, no runtimes, no bloat. BlockPanel is fully self-contained.</p>
+          </div>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Configure Your Server</h3>
+            <p>Open Settings. Set your server directory and download a Minecraft JAR from the built-in manager. BlockPanel handles EULA and server.properties automatically.</p>
+          </div>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Hit Start</h3>
+            <p>Click the Start button. Watch the Live Console stream logs in real time. Manage players, install mods, and render your world — all from one place.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Portable Mode ── -->
+  <section id="portable" class="section portable">
+    <div class="container portable-inner">
+      <div class="portable-text reveal">
+        <div class="section-tag">Portable Mode</div>
+        <h2>Take your server anywhere.</h2>
+        <p>BlockPanel is designed to be truly portable. Drop the app and a <code>portable.txt</code> file in the same folder — all configs, JARs, and backups stay right there.</p>
+        <ul class="portable-list">
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Run from a USB drive
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Zero AppData pollution
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Project-scoped installations
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No admin rights needed
+          </li>
+        </ul>
+      </div>
+      <div class="portable-demo reveal reveal-delay-1" aria-hidden="true">
+        <div class="file-tree">
+          <div class="file-tree-header">
+            <span class="tree-dot r"></span><span class="tree-dot y"></span><span class="tree-dot g"></span>
+            <span class="tree-title">📁 MyServer</span>
+          </div>
+          <div class="file-tree-body">
+            <div class="tree-row"><span class="tree-icon">📁</span> <span>jars/</span></div>
+            <div class="tree-row indent"><span class="tree-icon">🟩</span> <span>1.21.4/server.jar</span></div>
+            <div class="tree-row"><span class="tree-icon">📁</span> <span>world/</span></div>
+            <div class="tree-row"><span class="tree-icon">⚙️</span> <span>server_config.json</span></div>
+            <div class="tree-row highlight"><span class="tree-icon">📄</span> <span class="accent-text">portable.txt</span> <span class="badge-new">← magic file</span></div>
+            <div class="tree-row"><span class="tree-icon">🖥️</span> <span>BlockPanel.exe</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Download ── -->
+  <section id="download" class="section download">
+    <div class="download-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Download</div>
+        <h2>Ready to deploy.</h2>
+        <p>Free for personal and community use. No account required.</p>
+      </div>
+      <div class="download-cards">
+        <div class="download-card recommended reveal">
+          <div class="rec-badge">Recommended</div>
+          <div class="dl-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="8" fill="#4ade8018"/><path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>NSIS Installer</h3>
+          <p>Classic Windows installer. Adds a Start Menu shortcut and supports clean uninstall.</p>
+          <a href="BlockPanelV2_0.1.0_x64-setup.exe" class="btn btn-primary" download id="nsis-dl">
+            Download .exe (3.7 MB)
+          </a>
+        </div>
+        <div class="download-card reveal reveal-delay-1">
+          <div class="dl-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="8" fill="#60a5fa18"/><path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>MSI Package</h3>
+          <p>Enterprise-grade Windows Installer package. Compatible with Group Policy and software management tools.</p>
+          <a href="BlockPanelV2_0.1.0_x64_en-US.msi" class="btn btn-secondary" download id="msi-dl">
+            Download .msi (5.3 MB)
+          </a>
+        </div>
+      </div>
+      <div class="download-note reveal">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.25h-1.5v-5h1.5v5zm0-6.5h-1.5v-1.5h1.5v1.5z" fill="currentColor"/></svg>
+        <span>Source code is private. Bug reports and feature requests are welcome via <a href="https://github.com/Otterdays/Block-Panel-V2-Public/issues" target="_blank" rel="noopener">GitHub Issues</a>.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" aria-label="Back to top">
+          <div class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/>
+              <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
+              <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
+              <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <span>BlockPanel</span>
+        </a>
+        <p>Native Minecraft server management for Windows. Built with Tauri & Rust.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Links</h4>
+          <a href="#features">Features</a>
+          <a href="#download">Download</a>
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/issues" target="_blank" rel="noopener">Report a Bug</a>
+        </div>
+        <div class="footer-col">
+          <h4>Tech</h4>
+          <a href="https://tauri.app" target="_blank" rel="noopener">Tauri</a>
+          <a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust</a>
+          <a href="https://modrinth.com" target="_blank" rel="noopener">Modrinth API</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BlockPanel. Free for personal & community use.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
