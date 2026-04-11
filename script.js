@@ -195,14 +195,124 @@
   });
 })();
 
-// ── Theme Swatch interactivity ──────────────────────────────
+// ── Theme Swatch interactivity & Infinite Drag ────────────────
 (function initThemeInteractivity() {
-  const swatches = document.querySelectorAll('.theme-swatch');
-  swatches.forEach(swatch => {
-    swatch.addEventListener('click', () => {
-      const name = swatch.getAttribute('data-name');
-      console.info('[BlockPanel] Theme preview selected:', name);
+  const strip = document.querySelector('.theme-strip');
+  if (!strip) return;
+
+  // 01. Clone nodes for infinite effect
+  const originalSwatches = [...strip.querySelectorAll('.theme-swatch')];
+  originalSwatches.forEach(sw => {
+    const clone = sw.cloneNode(true);
+    strip.appendChild(clone);
+  });
+
+  // Calculate the total width of one full set
+  const getLoopWidth = () => {
+    const gap = 16; // from css
+    const swatchWidth = 160; // from css
+    return originalSwatches.length * (swatchWidth + gap);
+  };
+
+  let loopWidth = getLoopWidth();
+  window.addEventListener('resize', () => { loopWidth = getLoopWidth(); });
+
+  // Drag to scroll state
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // 02. Seamless wrap logic
+  function checkWrap() {
+    if (strip.scrollLeft >= loopWidth) {
+      strip.scrollLeft -= loopWidth;
+    } else if (strip.scrollLeft <= 0) {
+      strip.scrollLeft += loopWidth;
+    }
+  }
+
+  strip.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - strip.offsetLeft;
+    scrollLeft = strip.scrollLeft;
+    checkWrap(); // Ensure we are in a safe zone before starting
+  });
+
+  strip.addEventListener('mouseleave', () => { isDown = false; });
+  strip.addEventListener('mouseup', () => { isDown = false; });
+
+  strip.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - strip.offsetLeft;
+    const walk = (x - startX) * 2;
+    strip.scrollLeft = scrollLeft - walk;
+    
+    // Wrap during drag
+    if (strip.scrollLeft >= loopWidth) {
+      strip.scrollLeft -= loopWidth;
+      startX = x; // Reset pivot
+      scrollLeft = strip.scrollLeft;
+    } else if (strip.scrollLeft <= 0) {
+      strip.scrollLeft += loopWidth;
+      startX = x; // Reset pivot
+      scrollLeft = strip.scrollLeft;
+    }
+  });
+
+  // 03. Auto-scroll logic
+  let scrollSpeed = 0.5;
+  let animationId;
+
+  function animate() {
+    if (!isDown) {
+      strip.scrollLeft += scrollSpeed;
+      checkWrap();
+    }
+    animationId = requestAnimationFrame(animate);
+  }
+
+  // Handle hover to pause/resume
+  strip.addEventListener('mouseenter', () => { scrollSpeed = 0; });
+  strip.addEventListener('mouseleave', () => { if (!isDown) scrollSpeed = 0.5; });
+
+  animate();
+
+  // Preview click (on all swatches, original and clones)
+  strip.addEventListener('click', (e) => {
+    const swatch = e.target.closest('.theme-swatch');
+    if (!swatch) return;
+    
+    // Prevent click if we were dragging
+    // Note: startX is from mousedown
+    const currentX = e.pageX - strip.offsetLeft;
+    if (isDown || Math.abs(startX - currentX) > 5) return;
+    
+    const name = swatch.getAttribute('data-name');
+    console.info('[BlockPanel] Theme preview selected:', name);
+  });
+})();
+
+// ── Live Theme Swapper ────────────────────────────────────────
+(function initThemeSwapper() {
+  const container = document.getElementById('theme-swapper');
+  if (!container) return;
+
+  const root = document.documentElement;
+  const buttons = container.querySelectorAll('.swap-btn');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const accent = btn.getAttribute('data-accent');
+      const accentRgb = btn.getAttribute('data-accent-rgb');
+      
+      // Update global CSS variables
+      root.style.setProperty('--bp-accent', accent);
+      root.style.setProperty('--bp-accent-rgb', accentRgb);
+      
+      console.info('[BlockPanel] Landing page theme updated:', accent);
     });
   });
 })();
+
 

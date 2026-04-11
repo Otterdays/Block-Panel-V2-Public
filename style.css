@@ -705,7 +705,11 @@ code {
   padding: 20px 0 40px;
   scrollbar-width: none;
   mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  cursor: grab;
+  user-select: none;
+  scroll-behavior: auto; /* Required for drag interaction */
 }
+.theme-strip:active { cursor: grabbing; }
 .theme-strip::-webkit-scrollbar { display: none; }
 .theme-swatch {
   flex: 0 0 160px;
@@ -771,35 +775,239 @@ code {
 .theme-cat h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
 .theme-cat p { font-size: 13px; color: var(--text-muted); }
 
-/* ── Tech Specs Styles ─────────────────────────────────────── */
-.specs { background: var(--bg2); }
-.specs-grid {
+/* ── Engineering Section ── */
+.tech-focus { background: radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.05), transparent 40%); padding: 120px 0; }
+.hood-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
-.spec-item {
+.hood-item {
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 24px;
+  padding: 32px;
   border-radius: var(--radius);
-  transition: background 0.3s;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s;
 }
-.spec-item:hover { background: var(--surface2); }
-.spec-label {
-  font-size: 11px;
-  font-weight: 700;
+.hood-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-dim);
+  background: var(--surface2);
+}
+.hood-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.hood-icon {
+  font-size: 24px;
+  background: rgba(var(--bp-accent-rgb), 0.1);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+.hood-item h4 { font-size: 18px; font-weight: 700; color: var(--text); }
+.hood-item p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+#engine-glow {
+  animation: engine-pulse 2.5s infinite ease-in-out;
+}
+@keyframes engine-pulse {
+  0%, 100% { background: #4ade80; box-shadow: 0 0 5px #4ade80; }
+  50% { background: #22c55e; box-shadow: 0 0 15px #22c55e; }
+}
+
+.titlebar-tag {
+  margin-left: auto;
+  font-size: 8px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent);
-  margin-bottom: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
 }
-.spec-value { font-size: 15px; font-weight: 500; color: var(--text); }
+
+/* ── Engineering Section ── */
+.tech-focus { background: radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.05), transparent 40%); padding: 120px 0; }
+.hood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 80px;
+}
+.hood-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: var(--radius);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s;
+}
+.hood-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-dim);
+  background: var(--surface2);
+}
+.hood-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.hood-icon {
+  font-size: 24px;
+  background: rgba(var(--bp-accent-rgb), 0.1);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+.hood-item h4 { font-size: 18px; font-weight: 700; color: var(--text); }
+.hood-item p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+/* ── Blueprint Visualization ── */
+.blueprint-box {
+  background: var(--bg2);
+  border: 1px dashed var(--border);
+  padding: 60px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.blueprint-box::before {
+  content: "SYSTEM TOPOLOGY";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  opacity: 0.3;
+  letter-spacing: 2px;
+}
+.bp-layer {
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  min-width: 240px;
+  text-align: center;
+}
+.bp-layer.active { border-color: var(--accent); color: var(--accent); background: rgba(var(--bp-accent-rgb), 0.05); }
+.bp-arrow {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--accent), var(--border));
+  position: relative;
+}
+.bp-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--border);
+}
+
+/* ── Constellation ── */
+.constellation { padding: 120px 0; background: #070707; position: relative; overflow: hidden; }
+.constellation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.gem {
+  padding: 24px;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  transition: all 0.3s;
+}
+.gem:hover { border-color: var(--accent); background: rgba(var(--bp-accent-rgb), 0.05); transform: scale(1.05); }
+.gem h5 { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: 0.5px; }
+.gem p { font-size: 12px; color: #888; line-height: 1.5; }
+
+/* ── FAQ ── */
+.faq { padding: 120px 0; }
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+.faq-item h3 { font-size: 18px; margin-bottom: 12px; color: var(--text); }
+.faq-item p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+
+/* ── Live Theme Swapper ── */
+.theme-swapper {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 32px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.swap-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.swap-btn:hover { transform: scale(1.2); }
+
+#engine-glow {
+  animation: engine-pulse 2.5s infinite ease-in-out;
+}
+@keyframes engine-pulse {
+  0%, 100% { background: #4ade80; box-shadow: 0 0 5px #4ade80; }
+  50% { background: #22c55e; box-shadow: 0 0 15px #22c55e; }
+}
+
+.titlebar-tag {
+  margin-left: auto;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
 
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .hood-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px) {
@@ -821,8 +1029,37 @@ code {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
   .features-grid { grid-template-columns: 1fr; }
+  .hood-grid { grid-template-columns: 1fr; }
   .download-cards { grid-template-columns: 1fr; }
   .hero { padding: 120px 0 80px; }
   .footer-links { flex-direction: column; gap: 32px; }
   .app-mockup { max-width: 100%; }
+}
+
+/* ── Nav Status Pill ── */
+.nav-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(var(--bp-accent-rgb), 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin-left: 16px;
+  border: 1px solid rgba(var(--bp-accent-rgb), 0.2);
+  white-space: nowrap;
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4ade80;
+}
+@media (max-width: 768px) {
+  .nav-status-pill { display: none; }
 }

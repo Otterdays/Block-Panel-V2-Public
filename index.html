@@ -28,13 +28,18 @@
           </svg>
         </div>
         <span>BlockPanel</span>
+        <div class="nav-status-pill">
+          <span class="status-dot"></span>
+          <span>Engine Online</span>
+        </div>
       </a>
       <ul class="nav-links" role="list">
         <li><a href="#features">Features</a></li>
+        <li><a href="#under-the-hood">Engineering</a></li>
         <li><a href="#themes">Themes</a></li>
         <li><a href="#how-it-works">How it Works</a></li>
-        <li><a href="#specs">Specs</a></li>
-        <li><a href="#portable">Portable</a></li>
+        <li><a href="#specs">Tech Specs</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
       </ul>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobile-toggle">
@@ -43,8 +48,10 @@
     </div>
     <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
       <a href="#features">Features</a>
+      <a href="#under-the-hood">Engineering</a>
+      <a href="#themes">Themes</a>
       <a href="#how-it-works">How it Works</a>
-      <a href="#portable">Portable Mode</a>
+      <a href="#faq">FAQ</a>
       <a href="#download">Download</a>
     </div>
   </nav>
@@ -57,7 +64,7 @@
       <div class="hero-text reveal">
         <div class="hero-badge">
           <span class="badge-dot" style="background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
-          <span>Version 2.5.0 — Intelligence Update</span>
+          <span>Version 2.5.1 — Launcher & Loader Update</span>
         </div>
         <h1>Manage your Minecraft server.<br /><span class="gradient-text">Without the terminal.</span></h1>
         <p class="hero-subtitle">BlockPanel is a native, standalone manager for Windows. Start, stop, monitor, and configure your Minecraft server from a clean, modern interface.</p>
@@ -78,7 +85,7 @@
             Built with Tauri & Rust
           </span>
           <span>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z" fill="currentColor"/></svg>
             Windows 10 / 11
           </span>
         </div>
@@ -88,8 +95,9 @@
           <div class="mockup-titlebar">
             <span class="titlebar-dot red"></span>
             <span class="titlebar-dot yellow"></span>
-            <span class="titlebar-dot green"></span>
+            <span class="titlebar-dot green" id="engine-glow"></span>
             <span class="titlebar-name">BlockPanel</span>
+            <div class="titlebar-tag">Engine V2</div>
           </div>
           <div class="mockup-body">
             <div class="mockup-sidebar">
@@ -104,27 +112,82 @@
             <div class="mockup-main">
               <div class="mockup-stat-row">
                 <div class="mockup-card">
-                  <div class="stat-label">Status</div>
-                  <div class="stat-value green">Online</div>
+                  <div class="stat-label">RAM Usage</div>
+                  <div class="stat-value">4.2 GB / 16 GB</div>
                 </div>
                 <div class="mockup-card">
-                  <div class="stat-label">Players</div>
-                  <div class="stat-value">3 / 20</div>
+                  <div class="stat-label">TPS</div>
+                  <div class="stat-value green">20.0</div>
                 </div>
                 <div class="mockup-card">
-                  <div class="stat-label">Uptime</div>
-                  <div class="stat-value">4h 22m</div>
+                  <div class="stat-label">Traffic</div>
+                  <div class="stat-value" style="color: #60a5fa;">850 Kbps</div>
                 </div>
               </div>
               <div class="mockup-console">
-                <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Server Online</div>
-                <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Ryan joined the game</div>
-                <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-warn">WARN</span> Saving chunks...</div>
-                <div class="console-line typing"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Entities: 204<span class="cursor-blink">▋</span></div>
+                <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Accepting EULA automatically...</div>
+                <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Checking Pre-flight safety...</div>
+                <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-info">INFO</span> Applying Aikar's GC Flags...</div>
+                <div class="console-line typing"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Starting Realm Edict Engine...<span class="cursor-blink">▋</span></div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Theme Swapper ── -->
+  <div class="theme-swapper" id="theme-swapper">
+    <button class="swap-btn" style="background: #6366f1;" data-accent="#6366f1" data-accent-rgb="99, 102, 241" title="Neon Genesis"></button>
+    <button class="swap-btn" style="background: #ef4444;" data-accent="#ef4444" data-accent-rgb="239, 68, 68" title="Neo-Tokyo"></button>
+    <button class="swap-btn" style="background: #10b981;" data-accent="#10b981" data-accent-rgb="16, 185, 129" title="Forest"></button>
+    <button class="swap-btn" style="background: #f59e0b;" data-accent="#f59e0b" data-accent-rgb="245, 158, 11" title="Fallout"></button>
+    <button class="swap-btn" style="background: #ec4899;" data-accent="#ec4899" data-accent-rgb="236, 72, 153" title="Dreamhouse"></button>
+  </div>
+
+  <!-- ── Under the Hood ── -->
+  <section id="under-the-hood" class="section tech-focus">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Engineering</div>
+        <h2>Under the Hood.</h2>
+        <p>BlockPanel is built on the same foundations as the industry's most high-performance engineering tools.</p>
+      </div>
+      <div class="hood-grid">
+        <div class="hood-item reveal">
+          <div class="hood-header">
+            <span class="hood-icon">🦀</span>
+            <h4>Tauri & Rust Architecture</h4>
+          </div>
+          <p>Native Rust backend enables real-time system probing with near-zero overhead. Memory safe, blazingly fast, and built for 24/7 reliability.</p>
+        </div>
+        <div class="hood-item reveal reveal-delay-1">
+          <div class="hood-header">
+            <span class="hood-icon">⚛️</span>
+            <h4>Embedded SQLite v3.45</h4>
+          </div>
+          <p>Local intelligence stored in a high-performance relational database. No cloud latency — your analytics and heatmaps are always instant.</p>
+        </div>
+        <div class="hood-item reveal reveal-delay-2">
+          <div class="hood-header">
+            <span class="hood-icon">🚀</span>
+            <h4>Monaco Engine Integration</h4>
+          </div>
+          <p>The code editor from VS Code, running natively. Hardware-accelerated config editing with multi-cursor support and syntax validation.</p>
+        </div>
+      </div>
+      <!-- System Blueprint Visualization -->
+      <div class="blueprint-box reveal">
+        <div class="bp-layer active">UX Interface (React / TS)</div>
+        <div class="bp-arrow"></div>
+        <div class="bp-layer">Tauri IPC Bridge</div>
+        <div class="bp-arrow"></div>
+        <div class="bp-layer active">Rust Core Orchestrator</div>
+        <div class="bp-arrow"></div>
+        <div class="bp-layer">Tokio Runtime Threadpool</div>
+        <div class="bp-arrow"></div>
+        <div class="bp-layer active">Minecraft Java Process</div>
       </div>
     </div>
   </section>
@@ -156,8 +219,8 @@
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10L2 7m10 10L2 17m10-5l10 5M12 17l10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3>JAR Manager</h3>
-          <p>Browse and download every Minecraft version — releases and snapshots — directly from Mojang's CDN with live progress tracking.</p>
+          <h3>Mod Loader Suite</h3>
+          <p>One-click management for Fabric, Forge, Quilt, and NeoForge. Dynamic version fetching from meta-APIs with intelligent release/snapshot filtering.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
@@ -210,10 +273,17 @@
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3>The Realm Edict</h3>
-          <p>In-app historical record of all updates, features, and contributors. Stay informed on the evolving platform through a high-fidelity markdown viewer.</p>
+          <h3>Client Launcher</h3>
+          <p>Launch Prism Launcher or Vanilla Minecraft directly from the Dashboard. Automatic detection for standard install paths and system protocols.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Smart Alert Snooze</h3>
+          <p>Clutter-free operations. Snooze system alerts for 15m, 1h, or hide them permanently. Persistent preferences that survive app restarts.</p>
         </div>
     </div>
   </section>
@@ -392,6 +462,56 @@
     </div>
   </section>
 
+  <!-- ── Dependency Constellation ── -->
+  <section class="section constellation">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Ecosystem</div>
+        <h2>Dependency Constellation.</h2>
+        <p>A curation of the world's most trusted high-performance libraries.</p>
+      </div>
+      <div class="constellation-grid">
+        <div class="gem reveal"><h5>Tokio</h5><p>Scalable async runtime for non-blocking I/O orchestration.</p></div>
+        <div class="gem reveal"><h5>Serde</h5><p>Atomic-speed data serialization for reliable configuration.</p></div>
+        <div class="gem reveal"><h5>Rusqlite</h5><p>High-performance local storage for player intelligence.</p></div>
+        <div class="gem reveal"><h5>Reqwest</h5><p>Resilient HTTP client for real-time metadata discovery.</p></div>
+        <div class="gem reveal"><h5>Sysinfo</h5><p>Cross-platform hardware ergonomics and telemetry.</p></div>
+        <div class="gem reveal"><h5>Chrono</h5><p>Thread-safe timekeeping for precise event logging.</p></div>
+        <div class="gem reveal"><h5>Radius</h5><p>Premium UI core built on atomic CSS principles.</p></div>
+        <div class="gem reveal"><h5>Monaco</h5><p>The world's most powerful browser-based code engine.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Support</div>
+        <h2>FAQ.</h2>
+        <p>Common technical questions answered.</p>
+      </div>
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <h3>Do I need to install Java manually?</h3>
+          <p>BlockPanel intelligently scans your system for existing Java environments. If one isn't found, our Pre-flight system provides direct links and guidance for the exact version your server requires.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my server data secure?</h3>
+          <p>Absolutely. BlockPanel is a local-first application. All configurations, logs, and database intelligence stay on your hard drive. We do not track your server contents or personal data.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I enable RCON?</h3>
+          <p>BlockPanel handles the complex RCON handshake automatically. Simply toggle "Enable RCON" in Settings, and the app will inject the necessary non-destructive flags into your server.properties.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I run multiple servers?</h3>
+          <p>Yes. By using <strong>Portable Mode</strong> (dropping a portable.txt file in the folder), you can create infinite isolated BlockPanel installations, each managing its own server environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Download ── -->
   <section id="download" class="section download">
     <div class="download-glow" aria-hidden="true"></div>
@@ -409,8 +529,8 @@
           </div>
           <h3>NSIS Installer</h3>
           <p>Classic Windows installer. Adds a Start Menu shortcut and supports clean uninstall.</p>
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.5.0_x64-setup.exe" class="btn btn-primary" id="nsis-dl" target="_blank" rel="noopener">
-            Download .exe (3.7 MB)
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.5.1_x64-setup.exe" class="btn btn-primary" id="nsis-dl" target="_blank" rel="noopener">
+            Download .exe (3.8 MB)
           </a>
         </div>
         <div class="download-card reveal reveal-delay-1">
@@ -419,8 +539,8 @@
           </div>
           <h3>MSI Package</h3>
           <p>Enterprise-grade Windows Installer package. Compatible with Group Policy tools.</p>
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.5.0_x64_en-US.msi" class="btn btn-secondary" id="msi-dl" target="_blank" rel="noopener">
-            Download .msi (5.3 MB)
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.5.1_x64_en-US.msi" class="btn btn-secondary" id="msi-dl" target="_blank" rel="noopener">
+            Download .msi (5.4 MB)
           </a>
         </div>
       </div>
