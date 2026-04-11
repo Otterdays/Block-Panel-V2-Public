@@ -1004,6 +1004,57 @@ code {
 }
 
 
+/* ── Tech Specs Styles ─────────────────────────────────────── */
+.specs { background: var(--bg); position: relative; padding: 120px 0; }
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.spec-item {
+  border-left: 1px solid var(--border);
+  padding: 12px 0 12px 32px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.spec-item:hover {
+  transform: translateX(10px);
+  border-left-color: var(--accent);
+}
+.spec-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.spec-value {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  font-family: var(--font-mono);
+}
+
+.spec-blue:hover { border-left-color: var(--blue); }
+.spec-blue .spec-label { color: var(--blue); }
+
+/* Impact Spec (Project Census) */
+.spec-census {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-left: 4px solid var(--accent);
+  padding: 40px;
+  border-radius: var(--radius);
+  margin-top: 24px;
+}
+.spec-census .spec-label { color: var(--accent); }
+.spec-census .spec-value { font-size: 26px; font-weight: 800; }
+.spec-census .spec-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; font-family: var(--font); opacity: 0.8; }
+
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1022,6 +1073,10 @@ code {
   .step-connector::after { width: 1px; height: 100%; background: linear-gradient(180deg, var(--accent-dim), transparent); position: absolute; left: 50%; }
   .portable-inner { grid-template-columns: 1fr; gap: 48px; }
   .footer-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .specs-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 640px) {
