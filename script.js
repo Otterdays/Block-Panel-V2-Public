@@ -307,8 +307,11 @@
       const accentRgb = btn.getAttribute('data-accent-rgb');
       
       // Update global CSS variables
+      root.style.setProperty('--accent', accent);
+      root.style.setProperty('--accent-dim', accent);
       root.style.setProperty('--bp-accent', accent);
       root.style.setProperty('--bp-accent-rgb', accentRgb);
+      root.style.setProperty('--accent-glow', `rgba(${accentRgb}, 0.25)`);
       
       console.info('[BlockPanel] Landing page theme updated:', accent);
     });
