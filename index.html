@@ -64,10 +64,10 @@
       <div class="hero-text reveal">
         <div class="hero-badge">
           <span class="badge-dot" style="background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
-          <span>Version 2.5.1 — Launcher & Loader Update</span>
+          <span>Version 2.6.1 — AI Intelligence & Knowledge Update</span>
         </div>
-        <h1>Manage your Minecraft server.<br /><span class="gradient-text">Without the terminal.</span></h1>
-        <p class="hero-subtitle">BlockPanel is a native, standalone manager for Windows. Start, stop, monitor, and configure your Minecraft server from a clean, modern interface.</p>
+        <h1>Command your Minecraft server.<br /><span class="gradient-text">From the throne room.</span></h1>
+        <p class="hero-subtitle">BlockPanel is a sovereign-grade Minecraft server command center for Windows. Real-time telemetry, AI-assisted operations, mod ecosystem management, and studio-quality UI — all from one panel.</p>
         <div class="hero-actions">
           <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/tag/MainChannel" class="btn btn-primary" id="hero-download-btn" target="_blank" rel="noopener">
             <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -125,10 +125,10 @@
                 </div>
               </div>
               <div class="mockup-console">
-                <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Accepting EULA automatically...</div>
-                <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Checking Pre-flight safety...</div>
-                <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-info">INFO</span> Applying Aikar's GC Flags...</div>
-                <div class="console-line typing"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Starting Realm Edict Engine...<span class="cursor-blink">▋</span></div>
+                <div class="console-line"><span class="cl-time">08:14:02</span> <span class="cl-info">INFO</span> Pre-flight: Java 21.0.3 ✓ RAM 8G ✓ EULA ✓</div>
+                <div class="console-line"><span class="cl-time">08:14:03</span> <span class="cl-info">INFO</span> Aikar GC flags applied → -XX:+UseG1GC</div>
+                <div class="console-line"><span class="cl-time">08:14:11</span> <span class="cl-info">INFO</span> Done (7.8s)! For help, type "help"</div>
+                <div class="console-line typing"><span class="cl-time">08:14:11</span> <span class="cl-info">INFO</span> Realm online — 0/20 players<span class="cursor-blink">▋</span></div>
               </div>
             </div>
           </div>
@@ -164,10 +164,10 @@
         </div>
         <div class="hood-item reveal reveal-delay-1">
           <div class="hood-header">
-            <span class="hood-icon">⚛️</span>
-            <h4>Embedded SQLite v3.45</h4>
+            <span class="hood-icon">🗄️</span>
+            <h4>Embedded SQLite v3.53</h4>
           </div>
-          <p>Local intelligence stored in a high-performance relational database. No cloud latency — your analytics and heatmaps are always instant.</p>
+          <p>Local intelligence stored in a high-performance relational database. Player events, activity heatmaps, retention curves — all instant, all yours.</p>
         </div>
         <div class="hood-item reveal reveal-delay-2">
           <div class="hood-header">
@@ -179,15 +179,19 @@
       </div>
       <!-- System Blueprint Visualization -->
       <div class="blueprint-box reveal">
-        <div class="bp-layer active">UX Interface (React / TS)</div>
+        <div class="bp-layer active">React 19 · TypeScript 6 · Recharts · Monaco</div>
         <div class="bp-arrow"></div>
-        <div class="bp-layer">Tauri IPC Bridge</div>
+        <div class="bp-layer">Tauri IPC Bridge — 73 Commands</div>
         <div class="bp-arrow"></div>
-        <div class="bp-layer active">Rust Core Orchestrator</div>
+        <div class="bp-layer active">Rust Core — Process · Analytics · Telemetry · AI Relay</div>
+        <div class="bp-arrow bp-split"></div>
+        <div class="bp-split-row">
+          <div class="bp-layer bp-branch">Tokio Async Runtime</div>
+          <div class="bp-layer bp-branch ai-branch">Knowledge Fetcher → SQLite</div>
+          <div class="bp-layer bp-branch ai-branch">LLM API (5 Providers)</div>
+        </div>
         <div class="bp-arrow"></div>
-        <div class="bp-layer">Tokio Runtime Threadpool</div>
-        <div class="bp-arrow"></div>
-        <div class="bp-layer active">Minecraft Java Process</div>
+        <div class="bp-layer active">Minecraft Java Process (stdin/stdout)</div>
       </div>
     </div>
   </section>
@@ -288,6 +292,129 @@
     </div>
   </section>
 
+  <!-- ── AI Intelligence ── -->
+  <section id="ai-intelligence" class="section ai-intelligence">
+    <div class="ai-bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag" style="background: rgba(139,92,246,0.15); color: #a78bfa; border-color: rgba(139,92,246,0.3);">AI Intelligence</div>
+        <h2>Your server has<br /><span class="gradient-text-ai">an AI copilot.</span></h2>
+        <p>BlockPanel's AI Assistant connects directly to your live server — reading state, logs, and your curated knowledge base to answer anything about your realm.</p>
+      </div>
+      <div class="ai-demo-grid reveal">
+        <!-- Chat mockup -->
+        <div class="ai-chat-mockup">
+          <div class="ai-chat-header">
+            <div class="ai-provider-pill">
+              <span class="ai-dot"></span>
+              <span>gemini-3.1-flash-lite · Context ON</span>
+            </div>
+            <div class="ai-model-badge">JEPPY V3</div>
+          </div>
+          <div class="ai-chat-body">
+            <div class="ai-msg user">
+              <span class="ai-msg-label">You</span>
+              <div class="ai-bubble user-bubble">Why is my server lagging? TPS dropped to 14.</div>
+            </div>
+            <div class="ai-msg assistant">
+              <span class="ai-msg-label">AI</span>
+              <div class="ai-bubble ai-bubble-main">
+                <p>Based on your live server state and recent logs, TPS drop to 14 suggests one of three culprits:</p>
+                <div class="ai-code-block">
+                  <span class="ai-code-lang">diagnosis</span>
+                  <pre>1. Chunk generation storm — players exploring new terrain
+2. Hopper lag — check for high-density item farms
+3. Entity overcrowding — run: /minecraft:kill @e[type=!player]
+
+Current RAM: 4.1G / 8G (51%) ← not the bottleneck
+Last 3 crashes: 0 ← stable runtime</pre>
+                </div>
+                <p>Try running <code>/spark profiler</code> to pinpoint the exact thread.</p>
+              </div>
+            </div>
+            <div class="ai-msg user">
+              <span class="ai-msg-label">You</span>
+              <div class="ai-bubble user-bubble">What mods do I have installed?</div>
+            </div>
+            <div class="ai-msg assistant typing-msg">
+              <span class="ai-msg-label">AI</span>
+              <div class="ai-bubble ai-bubble-main">
+                <span class="ai-thinking"><span></span><span></span><span></span></span>
+              </div>
+            </div>
+          </div>
+          <div class="ai-chat-footer">
+            <div class="ai-input-mock">Ask anything about your server...</div>
+            <div class="ai-send-btn">↑</div>
+          </div>
+        </div>
+
+        <!-- Feature highlights -->
+        <div class="ai-features">
+          <div class="ai-feature-item reveal">
+            <div class="ai-feature-icon">🧠</div>
+            <div class="ai-feature-text">
+              <h4>Live Context Injection</h4>
+              <p>Server state, config, player count, uptime, and last 15 log lines — automatically injected into every message when context is enabled.</p>
+            </div>
+          </div>
+          <div class="ai-feature-item reveal reveal-delay-1">
+            <div class="ai-feature-icon">📚</div>
+            <div class="ai-feature-text">
+              <h4>Knowledge Base</h4>
+              <p>Feed the AI any URL — Minecraft wiki, Paper docs, your own guides. Scraped, stored as markdown, and injected into context automatically.</p>
+            </div>
+          </div>
+          <div class="ai-feature-item reveal reveal-delay-2">
+            <div class="ai-feature-icon">🔌</div>
+            <div class="ai-feature-text">
+              <h4>5 Provider Support</h4>
+              <p>OpenAI · Google Gemini · OpenRouter · Custom endpoint · Ollama (local). One UI, any model. Your API key, your data.</p>
+            </div>
+          </div>
+          <div class="ai-feature-item reveal">
+            <div class="ai-feature-icon">🔒</div>
+            <div class="ai-feature-text">
+              <h4>Identity Pinned</h4>
+              <p>The model's name and provider are baked into the system prompt. No hallucinated identity — the AI always knows exactly what it is.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data flow diagram -->
+      <div class="ai-pipeline reveal">
+        <div class="pipeline-label">Knowledge Pipeline</div>
+        <div class="pipeline-steps">
+          <div class="pipeline-step">
+            <div class="ps-icon">🌐</div>
+            <div class="ps-text">HTTPS URL</div>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <div class="ps-icon">🔍</div>
+            <div class="ps-text">HTML Scrape</div>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <div class="ps-icon">📄</div>
+            <div class="ps-text">Markdown Snapshot</div>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <div class="ps-icon">💾</div>
+            <div class="ps-text">Stored on Disk</div>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step active-step">
+            <div class="ps-icon">🤖</div>
+            <div class="ps-text">AI Context</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Themes Showcase ── -->
   <section id="themes" class="section themes">
     <div class="themes-bg-blur" aria-hidden="true"></div>
@@ -295,7 +422,7 @@
       <div class="section-header reveal">
         <div class="section-tag">Aesthetics</div>
         <h2>Visual Excellence. By Default.</h2>
-        <p>BlockPanel isn't just a manager—it's a canvas. Choose from over 50 high-fidelity themes built for players who care about how their tools look and feel.</p>
+        <p>BlockPanel isn't just a manager — it's a canvas. Choose from over 60 high-fidelity themes built for operators who demand style and substance in equal measure.</p>
       </div>
       <div class="themes-showcase reveal">
         <div class="theme-strip">
@@ -477,8 +604,10 @@
         <div class="gem reveal"><h5>Reqwest</h5><p>Resilient HTTP client for real-time metadata discovery.</p></div>
         <div class="gem reveal"><h5>Sysinfo</h5><p>Cross-platform hardware ergonomics and telemetry.</p></div>
         <div class="gem reveal"><h5>Chrono</h5><p>Thread-safe timekeeping for precise event logging.</p></div>
-        <div class="gem reveal"><h5>Radius</h5><p>Premium UI core built on atomic CSS principles.</p></div>
-        <div class="gem reveal"><h5>Monaco</h5><p>The world's most powerful browser-based code engine.</p></div>
+        <div class="gem reveal"><h5>Recharts</h5><p>Composable chart library powering real-time telemetry sparklines.</p></div>
+        <div class="gem reveal"><h5>Monaco</h5><p>The VS Code editor engine — syntax highlighting, multi-cursor, bracket matching.</p></div>
+        <div class="gem reveal"><h5>Scraper</h5><p>HTML parsing for the Knowledge Base — fetches and extracts clean text from any URL.</p></div>
+        <div class="gem reveal"><h5>Rcon</h5><p>Minecraft RCON protocol client for administrative side-channel commands.</p></div>
       </div>
     </div>
   </section>
@@ -492,22 +621,107 @@
         <p>Common technical questions answered.</p>
       </div>
       <div class="faq-grid reveal">
+
+        <div class="faq-category">
+          <div class="faq-cat-label">Getting Started</div>
+        </div>
+
         <div class="faq-item">
-          <h3>Do I need to install Java manually?</h3>
-          <p>BlockPanel intelligently scans your system for existing Java environments. If one isn't found, our Pre-flight system provides direct links and guidance for the exact version your server requires.</p>
+          <h3>What is BlockPanel, exactly?</h3>
+          <p>It's a desktop app for Windows that manages Minecraft Java Edition servers. Instead of typing commands into a black terminal window, you get a full UI — start/stop controls, real-time logs, mod installer, world map, player stats, and an AI assistant — all in one place. No command line required.</p>
         </div>
         <div class="faq-item">
-          <h3>Is my server data secure?</h3>
-          <p>Absolutely. BlockPanel is a local-first application. All configurations, logs, and database intelligence stay on your hard drive. We do not track your server contents or personal data.</p>
+          <h3>Do I need to install Java manually?</h3>
+          <p>BlockPanel scans your system for existing Java installs automatically. If nothing is found, the Pre-flight panel tells you exactly which version you need (Java 17 for 1.17–1.20, Java 21 for 1.21+) and blocks the Start button until it's resolved. You install Java once — BlockPanel remembers the path.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I need a Minecraft account to host a server?</h3>
+          <p>No. Hosting a Java Edition server does not require a Mojang or Microsoft account. BlockPanel downloads official server JARs directly from Mojang's CDN. Players connecting to your server need accounts unless you enable offline mode in server.properties.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I actually start a server for the first time?</h3>
+          <p>Open Settings → set your server directory (an empty folder works) → go to Versions and download a server JAR → return to Settings and select that JAR → click Start on the Dashboard. The Pre-flight system checks everything before launch and tells you exactly what's wrong if anything fails.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does BlockPanel host my server online? Do I need port forwarding?</h3>
+          <p>BlockPanel runs the server on your own machine. It does not provide hosting, cloud infrastructure, or networking. For players outside your local network to connect, you need to port-forward TCP 25565 on your router to your machine's local IP. BlockPanel doesn't handle this — it's a router-level setting.</p>
+        </div>
+
+        <div class="faq-category">
+          <div class="faq-cat-label">Server & Mods</div>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I use Paper, Purpur, Fabric, or Forge — not just vanilla?</h3>
+          <p>Yes. The Versions panel has separate tabs for Vanilla, Mod Loaders (Fabric, Forge, NeoForge, Quilt), and Optimized builds. Download any of them and point BlockPanel at the resulting JAR. The Mods panel integrates with Modrinth for mod/plugin search and install.</p>
         </div>
         <div class="faq-item">
           <h3>How do I enable RCON?</h3>
-          <p>BlockPanel handles the complex RCON handshake automatically. Simply toggle "Enable RCON" in Settings, and the app will inject the necessary non-destructive flags into your server.properties.</p>
+          <p>Toggle "Enable RCON" in Settings and set a password. BlockPanel injects the required flags into <code>server.properties</code> non-destructively — it won't overwrite your other settings. Once enabled, the Console's Quick Actions row (TPS, weather, time, save-all) uses RCON as a side-channel so it doesn't compete with the stdin pipe.</p>
         </div>
         <div class="faq-item">
-          <h3>Can I run multiple servers?</h3>
-          <p>Yes. By using <strong>Portable Mode</strong> (dropping a portable.txt file in the folder), you can create infinite isolated BlockPanel installations, each managing its own server environment.</p>
+          <h3>I installed a mod and now the server won't start. What do I do?</h3>
+          <p>Check the Console for the crash cause — it will usually name the conflicting mod or missing dependency. Common fixes: wrong mod loader (Fabric mod on a Forge server), incompatible Minecraft version, or a missing required dependency. Use the Mods panel's dependency tree to check requirements. You can disable individual mods without uninstalling using the toggle in the installed mods list.</p>
         </div>
+        <div class="faq-item">
+          <h3>Can I run multiple servers at the same time?</h3>
+          <p>Not from a single BlockPanel instance — it manages one server process at a time. For multiple servers, use <strong>Portable Mode</strong>: drop a <code>portable.txt</code> file next to a copy of BlockPanel.exe in each server's folder. Each instance is fully isolated with its own config, JARs, and database. Each server needs a different port (default 25565, 25566, etc.).</p>
+        </div>
+
+        <div class="faq-category">
+          <div class="faq-cat-label">AI Assistant</div>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I need an API key to use the AI assistant?</h3>
+          <p>Yes. The AI panel connects to external providers (OpenAI, Google Gemini, OpenRouter, etc.) using your own API key. Google Gemini offers free-tier access via <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a> — easiest way to get started at zero cost. Your key is stored locally in <code>llm_config.json</code> and never leaves your machine except in requests to the provider you configure.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does "Context ON" actually send to the AI?</h3>
+          <p>When context is enabled, every message includes: server name, current state (online/offline), player count, uptime, JAR path, RAM config, MOTD, world name, difficulty, PVP and whitelist settings, view distance, and the last 15 log lines. It also lists any URLs you've saved to the Knowledge Base. The AI cannot see your file system, passwords, or API keys.</p>
+        </div>
+        <div class="faq-item">
+          <h3>The AI gave me wrong or dangerous advice. What now?</h3>
+          <p>AI assistants can hallucinate. Never run a command suggested by the AI without understanding what it does first — especially anything involving <code>/stop</code>, <code>/kill</code>, file deletions, or permission changes. BlockPanel's AI is a starting point for diagnosis, not an authority. Cross-check with the official Minecraft wiki or Paper docs before acting on sensitive suggestions.</p>
+        </div>
+
+        <div class="faq-category">
+          <div class="faq-cat-label">Failures & Edge Cases</div>
+        </div>
+
+        <div class="faq-item">
+          <h3>The server crashes immediately after starting. No error in the console.</h3>
+          <p>This usually means the Java process exited before producing output. Causes: wrong JAR type (downloaded a client JAR instead of a server JAR), missing EULA acceptance (run the server manually once to generate <code>eula.txt</code>, then set <code>eula=true</code>), or corrupted JAR (re-download via the Versions panel). The Pre-flight check catches most of these before launch.</p>
+        </div>
+        <div class="faq-item">
+          <h3>BlockPanel says "server is online" but no one can connect.</h3>
+          <p>BlockPanel tracks the process state, not external reachability. If it shows online but players can't connect: (1) check your firewall — Windows Firewall often blocks Java on first launch; (2) verify port forwarding on your router if they're connecting from outside your network; (3) confirm the correct IP address is being used. The Dashboard's server query widget shows live latency and MOTD to verify the port is actually open.</p>
+        </div>
+        <div class="faq-item">
+          <h3>I deleted my server directory by accident. Can BlockPanel recover it?</h3>
+          <p>No. BlockPanel doesn't move or copy your server files — it points to wherever you placed them. If you have backups created via the Backups panel, restore them there. If not, the world data is gone. This is exactly why the Backups panel exists. Set up automatic backups before you need them.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Windows Defender is blocking BlockPanel or flagging it as a virus.</h3>
+          <p>BlockPanel is an unsigned executable built with Tauri. Windows SmartScreen flags unsigned apps from unknown publishers — this is a false positive. The full source code is open on GitHub. To proceed: click "More info" on the SmartScreen dialog → "Run anyway." If your IT policy blocks unsigned executables entirely, use the MSI package, which may have different trust handling in enterprise environments.</p>
+        </div>
+        <div class="faq-item">
+          <h3>The app opens but shows a blank white screen.</h3>
+          <p>BlockPanel uses Windows WebView2 (the same engine as Edge) to render the UI. A blank screen usually means WebView2 isn't installed or is severely outdated. Download the WebView2 runtime from Microsoft's website and install it. If you're on a fresh Windows 11 install, WebView2 should already be present — try running Windows Update first.</p>
+        </div>
+        <div class="faq-item">
+          <h3>My server is lagging but CPU and RAM look fine in the Resources panel.</h3>
+          <p>TPS lag isn't always a hardware problem. Common culprits: chunk generation (players exploring new areas), too many entities (item farms, mob farms hitting caps), or a single expensive tick (complex redstone, plugin loops). Install Spark (available in the Mods panel → Quick Essentials → Performance) and run <code>/spark profiler</code> for a precise breakdown of what's eating your tick budget.</p>
+        </div>
+        <div class="faq-item">
+          <h3>The World Map shows nothing / renders blank tiles.</h3>
+          <p>The map reads <code>.mca</code> region files directly from your server's <code>world/region/</code> folder. If the server has never been started, no region files exist yet — the map will be empty. If it's been started and tiles are still blank, verify the server directory in Settings points to the correct folder containing the <code>world/</code> subdirectory.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my server data secure?</h3>
+          <p>BlockPanel is entirely local. No telemetry, no cloud sync, no analytics sent anywhere. Your <code>server_config.json</code>, <code>analytics.db</code>, and all world data stay on your hard drive. The only outbound connections BlockPanel makes are: downloading JARs from Mojang, searching Modrinth, and your AI provider calls (using your own key). You can verify this with a network monitor.</p>
+        </div>
+
       </div>
     </div>
   </section>
