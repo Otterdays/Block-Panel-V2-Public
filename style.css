@@ -102,24 +102,39 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
 }
 .nav-links a {
-  color: var(--text-dim);
+  color: var(--text-muted);
   text-decoration: none;
-  padding: 6px 14px;
+  padding: 6px 10px;
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   transition: color var(--transition), background var(--transition);
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-links a.active {
+  color: var(--accent);
+  background: rgba(var(--bp-accent-rgb, 74, 222, 128), 0.08);
+}
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-mid);
+  margin: 0 6px;
+  flex-shrink: 0;
+}
 .nav-cta {
   color: var(--bg) !important;
   background: var(--accent) !important;
   font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 6px 14px !important;
 }
-.nav-cta:hover { background: var(--accent-dim) !important; }
+.nav-cta:hover { opacity: 0.9; }
+.nav-cta.active { color: var(--bg) !important; background: var(--accent) !important; }
 .nav-mobile-toggle {
   display: none;
   flex-direction: column;
@@ -156,6 +171,12 @@ body {
 }
 .nav-mobile-menu a:last-child { border-bottom: none; }
 .nav-mobile-menu a:hover { color: var(--accent); }
+.nav-mobile-menu a.mobile-cta {
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 4px;
+}
+.nav-mobile-menu a.active { color: var(--accent); }
 
 /* ── Buttons ───────────────────────────────────────────────── */
 .btn {
@@ -1079,10 +1100,14 @@ code {
   .specs-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
-@media (max-width: 640px) {
-  .section { padding: 80px 0; }
+@media (max-width: 1060px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
+  .nav-status-pill { display: none; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 80px 0; }
   .features-grid { grid-template-columns: 1fr; }
   .hood-grid { grid-template-columns: 1fr; }
   .download-cards { grid-template-columns: 1fr; }
@@ -1115,10 +1140,6 @@ code {
   border-radius: 50%;
   box-shadow: 0 0 10px #4ade80;
 }
-@media (max-width: 768px) {
-  .nav-status-pill { display: none; }
-}
-
 /* ── Blueprint Split Row ─────────────────────────────────── */
 .bp-split-row {
   display: flex;
