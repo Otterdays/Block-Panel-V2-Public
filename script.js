@@ -279,19 +279,38 @@
   animate();
 
   // Preview click (on all swatches, original and clones)
-  strip.addEventListener('click', (e) => {
-    const swatch = e.target.closest('.theme-swatch');
-    if (!swatch) return;
-    
-    // Prevent click if we were dragging
-    // Note: startX is from mousedown
-    const currentX = e.pageX - strip.offsetLeft;
-    if (isDown || Math.abs(startX - currentX) > 5) return;
-    
-    const name = swatch.getAttribute('data-name');
-    console.info('[BlockPanel] Theme preview selected:', name);
-  });
-})();
+   strip.addEventListener('click', (e) => {
+     const swatch = e.target.closest('.theme-swatch');
+     if (!swatch) return;
+     
+     // Prevent click if we were dragging
+     const currentX = e.pageX - strip.offsetLeft;
+     if (isDown || Math.abs(startX - currentX) > 5) return;
+     
+     const name = swatch.getAttribute('data-name');
+     const accentColor = swatch.style.getPropertyValue('--swatch-bg');
+     const accentRgb = hexToRgb(accentColor);
+     
+     // Update theme swapper to reflect this selection
+     root.style.setProperty('--accent', accentColor);
+     root.style.setProperty('--accent-dim', accentColor);
+     root.style.setProperty('--bp-accent', accentColor);
+     root.style.setProperty('--bp-accent-rgb', accentRgb);
+     root.style.setProperty('--accent-glow', `rgba(${accentRgb}, 0.25)`);
+     
+     // Highlight the selected swatch
+     document.querySelectorAll('.theme-swatch').forEach(s => s.classList.remove('selected'));
+     swatch.classList.add('selected');
+     
+     console.info('[BlockPanel] Theme selected:', name);
+   });
+
+   // Helper to convert hex to RGB
+   function hexToRgb(hex) {
+     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+     return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '74, 222, 128';
+   }
+ })();
 
 // ── Live Theme Swapper ────────────────────────────────────────
 (function initThemeSwapper() {
@@ -318,4 +337,225 @@
   });
 })();
 
+
+// ── Hero Mockup Tab Cycling ───────────────────────────────────
+(function initMockupCycler() {
+  const panels = ['dashboard', 'console', 'players'];
+  const sidebarItems = document.querySelectorAll('.sidebar-item[data-panel]');
+  let current = 0;
+  let timer = null;
+
+  function showPanel(index) {
+    panels.forEach((id, i) => {
+      const el = document.getElementById('panel-' + id);
+      if (!el) return;
+      el.style.display = i === index ? 'flex' : 'none';
+    });
+    sidebarItems.forEach(item => {
+      const isActive = item.getAttribute('data-panel') === panels[index];
+      item.classList.toggle('mk-active', isActive);
+      item.classList.toggle('active', false);
+    });
+    // WHY: sync status bar indicator dots with active panel
+    document.querySelectorAll('.msb-dot').forEach((dot, i) => {
+      dot.classList.toggle('msb-active', i === index);
+    });
+    current = index;
+  }
+
+  function tick() {
+    const next = (current + 1) % panels.length;
+    showPanel(next);
+  }
+
+  // WHY: clicking a sidebar item immediately switches + resets cycle
+  sidebarItems.forEach((item, i) => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      clearInterval(timer);
+      showPanel(i);
+      timer = setInterval(tick, 4000);
+    });
+  });
+
+  if (sidebarItems.length > 0) {
+    timer = setInterval(tick, 4000);
+  }
+})();
+
+// ── Mockup 3D Tilt on Hover ──────────────────────────────────
+(function initMockupTilt() {
+  const mockup = document.getElementById('hero-mockup');
+  if (!mockup) return;
+
+  // WHY: CSS perspective enables the 3D rotation illusion
+  mockup.style.transition = 'transform 0.4s ease';
+  mockup.parentElement.style.perspective = '800px';
+
+  mockup.addEventListener('mousemove', (e) => {
+    const rect = mockup.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mockup.style.transform =
+      `rotateY(${x * 8}deg) rotateX(${-y * 6}deg) scale(1.02)`;
+  });
+
+  mockup.addEventListener('mouseleave', () => {
+    mockup.style.transform = 'rotateY(0) rotateX(0) scale(1)';
+  });
+})();
+
+// ── Live-Ticking TPS Stat ────────────────────────────────────
+(function initLiveTPS() {
+  const tpsEl = document.querySelector(
+    '#panel-dashboard .stat-value.green'
+  );
+  const tpsBar = document.querySelector(
+    '#panel-dashboard .mockup-card:first-child .stat-bar-fill'
+  );
+  if (!tpsEl) return;
+
+  setInterval(() => {
+    // WHY: small jitter sells the "live data" illusion
+    const val = (19.9 + Math.random() * 0.1).toFixed(1);
+    tpsEl.textContent = val;
+    if (tpsBar) {
+      tpsBar.style.width = (parseFloat(val) / 20 * 100) + '%';
+    }
+  }, 1500);
+})();
+
+// ── Live RAM Telemetry ──────────────────────────────────────
+(function initLiveRAM() {
+  const ramEl = document.querySelector(
+    '#panel-dashboard .mockup-card:nth-child(2) .stat-value'
+  );
+  const ramBar = document.querySelector(
+    '#panel-dashboard .mockup-card:nth-child(2) .stat-bar-fill'
+  );
+  if (!ramEl || !ramBar) return;
+
+  setInterval(() => {
+    // WHY: RAM fluctuates as GC runs or players move
+    const val = (3.2 + Math.random() * 0.4).toFixed(1);
+    ramEl.textContent = `${val} GB`;
+    ramBar.style.width = (parseFloat(val) / 8 * 100) + '%';
+  }, 3000);
+})();
+
+// ── Console Auto-Typing Simulation ──────────────────────────
+(function initConsoleTyping() {
+  const inputEl = document.querySelector('.console-input-mock');
+  const consoleEl = document.querySelector('.mockup-console-full');
+  if (!inputEl || !consoleEl) return;
+
+  const commands = ['/tps', '/list', '/save-all', '/weather clear'];
+  let cmdIdx = 0;
+
+  function typeAction() {
+    // Only type if the console panel is actually visible/active
+    if (consoleEl.offsetParent === null) {
+      setTimeout(typeAction, 4000);
+      return;
+    }
+
+    const cmd = commands[cmdIdx];
+    let charIdx = 0;
+    inputEl.textContent = '';
+
+    const typeInterval = setInterval(() => {
+      inputEl.textContent += cmd[charIdx];
+      charIdx++;
+      if (charIdx >= cmd.length) {
+        clearInterval(typeInterval);
+        setTimeout(submitAction, 800);
+      }
+    }, 100);
+  }
+
+  function submitAction() {
+    const cmd = inputEl.textContent;
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    
+    // Create new line
+    const line = document.createElement('div');
+    line.className = 'console-line';
+    line.innerHTML = `<span class="cl-time">[${time}]</span> <span class="cl-info">[Server]</span> ${cmd === '/tps' ? 'TPS: 20.0' : cmd === '/list' ? 'Players: 4/20' : 'Command executed.'}`;
+    
+    // Add to console and scroll
+    consoleEl.insertBefore(line, consoleEl.lastElementChild);
+    if (consoleEl.children.length > 8) consoleEl.removeChild(consoleEl.firstChild);
+    
+    inputEl.textContent = '';
+    cmdIdx = (cmdIdx + 1) % commands.length;
+    setTimeout(typeAction, 8000);
+  }
+
+  setTimeout(typeAction, 2000);
+})();
+
+
+// ── Animated Sparkline ───────────────────────────────────────
+(function initSparklineAnimation() {
+  const svg = document.querySelector('.sparkline');
+  if (!svg) return;
+
+  const W = 200;
+  const H = 36;
+  const POINTS = 20;
+  let data = [];
+
+  // WHY: seed with initial data matching the static SVG look
+  for (let i = 0; i < POINTS; i++) {
+    data.push(8 + Math.random() * 20);
+  }
+
+  function buildPath(pts, close) {
+    const step = W / (pts.length - 1);
+    let d = `M0,${pts[0]}`;
+    for (let i = 1; i < pts.length; i++) {
+      const cx = (i - 0.5) * step;
+      const py = pts[i - 1];
+      const cy = pts[i];
+      d += ` C${cx},${py} ${cx},${cy} ${i * step},${cy}`;
+    }
+    if (close) d += ` L${W},${H} L0,${H} Z`;
+    return d;
+  }
+
+  const paths = svg.querySelectorAll('path');
+  if (paths.length < 2) return;
+
+  setInterval(() => {
+    data.shift();
+    data.push(8 + Math.random() * 20);
+    paths[0].setAttribute('d', buildPath(data, false));
+    paths[1].setAttribute('d', buildPath(data, true));
+  }, 2000);
+})();
+
+// ── Live Uptime Counter ──────────────────────────────────────
+(function initLiveUptime() {
+  const uptimes = [
+    document.getElementById('mk-uptime-1'),
+    document.getElementById('mk-uptime-2')
+  ];
+  let hours = 4;
+  let minutes = 22;
+
+  setInterval(() => {
+    minutes++;
+    if (minutes >= 60) {
+      minutes = 0;
+      hours++;
+    }
+    const str = `${hours}h ${minutes}m`;
+    uptimes.forEach(el => {
+      if (el) {
+        if (el.id === 'mk-uptime-1') el.textContent = `↑ ${str}`;
+        else el.textContent = str;
+      }
+    });
+  }, 60000); // WHY: updating every minute is realistic for an uptime display
+})();
 

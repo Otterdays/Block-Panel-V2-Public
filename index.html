@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlockPanel — Minecraft Server Manager for Windows</title>
-  <meta name="description" content="BlockPanel is a native, standalone Minecraft server manager for Windows. Start, stop, manage mods, and monitor your server — no terminal required." />
+  <meta name="description"
+    content="BlockPanel is a native, standalone Minecraft server manager for Windows. Start, stop, manage mods, and monitor your server — no terminal required." />
   <meta property="og:title" content="BlockPanel — Minecraft Server Manager" />
   <meta property="og:description" content="Native, lightweight Minecraft server control. No command line required." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- ── Navigation ── -->
@@ -21,10 +26,10 @@
       <a href="#" class="nav-logo" aria-label="BlockPanel home">
         <div class="logo-icon" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/>
-            <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
-            <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
-            <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor"/>
+            <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor" />
+            <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6" />
+            <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6" />
+            <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor" />
           </svg>
         </div>
         <span>BlockPanel</span>
@@ -34,12 +39,15 @@
         </div>
       </a>
       <ul class="nav-links" role="list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#under-the-hood">Engineering</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#ai-intelligence">AI</a></li>
-        <li><a href="#under-the-hood">Engineering</a></li>
         <li><a href="#themes">Themes</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#portable">Portable</a></li>
         <li><a href="#specs">Specs</a></li>
+        <li><a href="#constellation">Dependencies</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="nav-divider" aria-hidden="true"></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
@@ -49,12 +57,15 @@
       </button>
     </div>
     <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#hero">Home</a>
+      <a href="#under-the-hood">Engineering</a>
       <a href="#features">Features</a>
       <a href="#ai-intelligence">AI Intelligence</a>
-      <a href="#under-the-hood">Engineering</a>
       <a href="#themes">Themes</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#portable">Portable Mode</a>
       <a href="#specs">Tech Specs</a>
+      <a href="#constellation">Dependencies</a>
       <a href="#faq">FAQ</a>
       <a href="#download" class="mobile-cta">Download</a>
     </div>
@@ -71,70 +82,114 @@
           <span>Version 2.7.0 — Player Intelligence & Deep Scan</span>
         </div>
         <h1>Command your Minecraft server.<br /><span class="gradient-text">From the throne room.</span></h1>
-        <p class="hero-subtitle">BlockPanel is a sovereign-grade Minecraft server command center for Windows. Real-time telemetry, AI-assisted operations, mod ecosystem management, and studio-quality UI — all from one panel.</p>
+        <p class="hero-subtitle">BlockPanel is a sovereign-grade Minecraft server command center for Windows. Real-time
+          telemetry, AI-assisted operations, mod ecosystem management, and studio-quality UI — all from one panel.</p>
         <div class="hero-actions">
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/tag/MainChannel" class="btn btn-primary" id="hero-download-btn" target="_blank" rel="noopener">
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases" class="btn btn-primary"
+            id="hero-download-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             Download Latest
           </a>
           <a href="#features" class="btn btn-ghost">Explore Features →</a>
         </div>
         <div class="hero-meta">
           <span>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 12.5A5.5 5.5 0 118 2.5a5.5 5.5 0 010 11zm.75-5.75V5a.75.75 0 00-1.5 0v3.5l2.25 1.5a.75.75 0 00.75-1.3l-1.5-1z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
+              <path
+                d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 12.5A5.5 5.5 0 118 2.5a5.5 5.5 0 010 11zm.75-5.75V5a.75.75 0 00-1.5 0v3.5l2.25 1.5a.75.75 0 00.75-1.3l-1.5-1z"
+                fill="currentColor" />
+            </svg>
             Free & open source
           </span>
           <span>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33C3.72 14.36 3.26 13 3.26 13c-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.23 1.87.87 2.33.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.62 7.62 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33C3.72 14.36 3.26 13 3.26 13c-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.23 1.87.87 2.33.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.62 7.62 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
+                fill="currentColor" />
+            </svg>
             Built with Tauri & Rust
           </span>
           <span>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
+              <path d="M8 1a7 7 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z"
+                fill="currentColor" />
+            </svg>
             Windows 10 / 11
           </span>
         </div>
       </div>
       <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
-        <div class="app-mockup">
+        <div class="app-mockup" id="hero-mockup">
           <div class="mockup-titlebar">
             <span class="titlebar-dot red"></span>
             <span class="titlebar-dot yellow"></span>
             <span class="titlebar-dot green" id="engine-glow"></span>
             <span class="titlebar-name">BlockPanel</span>
-            <div class="titlebar-tag">Engine V2</div>
+            <div class="mockup-server-status"><span class="msv-dot"></span><span class="msv-label">Online</span></div>
+            <div class="titlebar-tag">V2.7</div>
           </div>
           <div class="mockup-body">
             <div class="mockup-sidebar">
-              <div class="sidebar-item active">Dashboard</div>
-              <div class="sidebar-item">Console</div>
-              <div class="sidebar-item">Players</div>
-              <div class="sidebar-item">Mods</div>
-              <div class="sidebar-item">World Map</div>
-              <div class="sidebar-item">Intelligence</div>
-              <div class="sidebar-item">Settings</div>
+              <div class="mockup-sidebar-section">Server</div>
+              <div class="sidebar-item mk-active" data-panel="dashboard"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><rect x="1" y="1" width="5" height="5" rx="1" fill="currentColor"/><rect x="8" y="1" width="5" height="5" rx="1" fill="currentColor" opacity=".5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="currentColor" opacity=".5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="currentColor"/></svg> Dashboard</div>
+              <div class="sidebar-item" data-panel="console"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><path d="M2 4l4 3-4 3M8 10h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Console</div>
+              <div class="sidebar-item" data-panel="players"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><circle cx="5" cy="4" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 11c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Players</div>
+              <div class="sidebar-item"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><path d="M7 2L1.5 5.5v5L7 14l5.5-3.5v-5L7 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg> Mods</div>
+              <div class="mockup-sidebar-section">Tools</div>
+              <div class="sidebar-item"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Analytics</div>
+              <div class="sidebar-item"><svg viewBox="0 0 14 14" fill="none" width="11" height="11"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M4 7h6M7 4v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> AI Chat</div>
             </div>
             <div class="mockup-main">
-              <div class="mockup-stat-row">
-                <div class="mockup-card">
-                  <div class="stat-label">RAM Usage</div>
-                  <div class="stat-value">4.2 GB / 16 GB</div>
+              <!-- Dashboard -->
+              <div class="mockup-panel" id="panel-dashboard">
+                <div class="mockup-stat-row">
+                  <div class="mockup-card"><div class="stat-label">TPS</div><div class="stat-value green">20.0</div><div class="stat-bar"><div class="stat-bar-fill" style="width:100%;background:var(--accent);"></div></div></div>
+                  <div class="mockup-card"><div class="stat-label">RAM</div><div class="stat-value">4.2 <span style="font-size:8px;color:var(--text-muted);">/ 16 GB</span></div><div class="stat-bar"><div class="stat-bar-fill" style="width:26%;background:var(--blue);"></div></div></div>
+                  <div class="mockup-card"><div class="stat-label">Players</div><div class="stat-value" style="color:#f472b6;">3 <span style="font-size:8px;color:var(--text-muted);">/ 20</span></div><div class="stat-bar"><div class="stat-bar-fill" style="width:15%;background:#f472b6;"></div></div></div>
                 </div>
-                <div class="mockup-card">
-                  <div class="stat-label">TPS</div>
-                  <div class="stat-value green">20.0</div>
+                <div class="mockup-chart-area">
+                  <div class="chart-label">CPU · 24h</div>
+                  <svg class="sparkline" viewBox="0 0 200 36" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.35"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0"/></linearGradient></defs><path d="M0,28 C10,26 18,22 28,20 C38,18 46,24 56,20 C66,16 75,10 86,12 C97,14 106,22 116,18 C126,14 136,8 146,10 C156,12 165,20 176,16 C186,12 196,10 200,8" stroke="#4ade80" stroke-width="1.5" fill="none"/><path d="M0,28 C10,26 18,22 28,20 C38,18 46,24 56,20 C66,16 75,10 86,12 C97,14 106,22 116,18 C126,14 136,8 146,10 C156,12 165,20 176,16 C186,12 196,10 200,8 L200,36 L0,36 Z" fill="url(#sg)"/></svg>
                 </div>
-                <div class="mockup-card">
-                  <div class="stat-label">Traffic</div>
-                  <div class="stat-value" style="color: #60a5fa;">850 Kbps</div>
-                </div>
+                <div class="mockup-player-row"><span class="mpr-label">Online</span><div class="mpr-avatars"><div class="mpr-avatar" style="background:#818cf8;">C</div><div class="mpr-avatar" style="background:#f472b6;">L</div><div class="mpr-avatar" style="background:#fb923c;">R</div></div><span class="mpr-uptime" id="mk-uptime-1">↑ 4h 22m</span></div>
               </div>
-              <div class="mockup-console">
-                <div class="console-line"><span class="cl-time">08:14:02</span> <span class="cl-info">INFO</span> Pre-flight: Java 21.0.3 ✓ RAM 8G ✓ EULA ✓</div>
-                <div class="console-line"><span class="cl-time">08:14:03</span> <span class="cl-info">INFO</span> Aikar GC flags applied → -XX:+UseG1GC</div>
-                <div class="console-line"><span class="cl-time">08:14:11</span> <span class="cl-info">INFO</span> Done (7.8s)! For help, type "help"</div>
-                <div class="console-line typing"><span class="cl-time">08:14:11</span> <span class="cl-info">INFO</span> Realm online — 0/20 players<span class="cursor-blink">▋</span></div>
+              <!-- Console -->
+              <div class="mockup-panel" id="panel-console" style="display:none;">
+                <div class="mockup-console-full">
+                  <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Server Online — Realm v2.7.0</div>
+                  <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Composer joined the game</div>
+                  <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-warn">WARN</span> Saving chunks… (14ms)</div>
+                  <div class="console-line"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Entities: 204 — Chunks: 289</div>
+                  <div class="console-line"><span class="cl-time">12:31:05</span> <span class="cl-info">INFO</span> Ryan joined the game</div>
+                  <div class="console-line"><span class="cl-time">12:35:22</span> <span class="cl-info">INFO</span> Overworld ticking at 20.0 TPS</div>
+                  <div class="console-line typing"><span class="cl-time">12:55:00</span> <span class="cl-info">INFO</span> Auto-backup completed ✓<span class="cursor-blink">▋</span></div>
+                </div>
+                <div class="console-input-row"><span class="console-prompt">$</span><span class="console-input-mock">say Restarting in 5 min...<span class="cursor-blink">▋</span></span></div>
+              </div>
+              <!-- Players -->
+              <div class="mockup-panel" id="panel-players" style="display:none;">
+                <div class="players-panel-header"><span class="pp-title">3 / 20 online</span><div class="pp-badge">● Live</div></div>
+                <div class="player-list">
+                  <div class="player-row"><div class="pl-avatar" style="background:linear-gradient(135deg,#818cf8,#6366f1);">C</div><div class="pl-info"><div class="pl-name">Composer</div><div class="pl-meta">Op · 4h 22m · Overworld</div></div><div class="pl-act-btn">Kick</div></div>
+                  <div class="player-row"><div class="pl-avatar" style="background:linear-gradient(135deg,#f472b6,#db2777);">L</div><div class="pl-info"><div class="pl-name">Lily</div><div class="pl-meta">Member · 1h 05m · Nether</div></div><div class="pl-act-btn">Kick</div></div>
+                  <div class="player-row"><div class="pl-avatar" style="background:linear-gradient(135deg,#fb923c,#ea580c);">R</div><div class="pl-info"><div class="pl-name">Ryan</div><div class="pl-meta">Member · 22m · Overworld</div></div><div class="pl-act-btn">Kick</div></div>
+                </div>
               </div>
             </div>
+          </div>
+          <!-- Status bar -->
+          <div class="mockup-statusbar">
+            <div class="msb-indicators" id="msb-indicators">
+              <span class="msb-dot msb-active" data-panel-idx="0"></span>
+              <span class="msb-dot" data-panel-idx="1"></span>
+              <span class="msb-dot" data-panel-idx="2"></span>
+            </div>
+            <span class="msb-stat"><span class="msb-stat-green">●</span> 20.0 TPS</span>
+            <span class="msb-stat">⏱ <span id="mk-uptime-2">4h 22m</span> uptime</span>
+            <span class="msb-stat">Java 21.0.3</span>
           </div>
         </div>
       </div>
@@ -142,12 +197,17 @@
   </section>
 
   <!-- ── Theme Swapper ── -->
-  <div class="theme-swapper" id="theme-swapper">
-    <button class="swap-btn" style="background: #6366f1;" data-accent="#6366f1" data-accent-rgb="99, 102, 241" title="Neon Genesis"></button>
-    <button class="swap-btn" style="background: #ef4444;" data-accent="#ef4444" data-accent-rgb="239, 68, 68" title="Neo-Tokyo"></button>
-    <button class="swap-btn" style="background: #10b981;" data-accent="#10b981" data-accent-rgb="16, 185, 129" title="Forest"></button>
-    <button class="swap-btn" style="background: #f59e0b;" data-accent="#f59e0b" data-accent-rgb="245, 158, 11" title="Fallout"></button>
-    <button class="swap-btn" style="background: #ec4899;" data-accent="#ec4899" data-accent-rgb="236, 72, 153" title="Dreamhouse"></button>
+  <div class="theme-swapper" id="theme-swapper" aria-label="Theme selector">
+    <button class="swap-btn" style="background: #6366f1;" data-accent="#6366f1" data-accent-rgb="99, 102, 241"
+      title="Neon Genesis" aria-label="Neon Genesis theme (press T to preview)"></button>
+    <button class="swap-btn" style="background: #ef4444;" data-accent="#ef4444" data-accent-rgb="239, 68, 68"
+      title="Neo-Tokyo" aria-label="Neo-Tokyo theme (press T to preview)"></button>
+    <button class="swap-btn" style="background: #10b981;" data-accent="#10b981" data-accent-rgb="16, 185, 129"
+      title="Forest" aria-label="Forest theme (press T to preview)"></button>
+    <button class="swap-btn" style="background: #f59e0b;" data-accent="#f59e0b" data-accent-rgb="245, 158, 11"
+      title="Fallout" aria-label="Fallout theme (press T to preview)"></button>
+    <button class="swap-btn" style="background: #ec4899;" data-accent="#ec4899" data-accent-rgb="236, 72, 153"
+      title="Dreamhouse" aria-label="Dreamhouse theme (press T to preview)"></button>
   </div>
 
   <!-- ── Under the Hood ── -->
@@ -164,21 +224,24 @@
             <span class="hood-icon">🦀</span>
             <h4>Tauri & Rust Architecture</h4>
           </div>
-          <p>Native Rust backend enables real-time system probing with near-zero overhead. Memory safe, blazingly fast, and built for 24/7 reliability.</p>
+          <p>Native Rust backend enables real-time system probing with near-zero overhead. Memory safe, blazingly fast,
+            and built for 24/7 reliability.</p>
         </div>
         <div class="hood-item reveal reveal-delay-1">
           <div class="hood-header">
             <span class="hood-icon">🗄️</span>
             <h4>Deep Player Intelligence</h4>
           </div>
-          <p>Autonomous world-scanning engine that reconstructs player history from world data. Blocks mined, advancements, and death-site geodata tracked silently via SQLite.</p>
+          <p>Autonomous world-scanning engine that reconstructs player history from world data. Blocks mined,
+            advancements, and death-site geodata tracked silently via SQLite.</p>
         </div>
         <div class="hood-item reveal reveal-delay-2">
           <div class="hood-header">
             <span class="hood-icon">🚀</span>
             <h4>Monaco Engine Integration</h4>
           </div>
-          <p>The code editor from VS Code, running natively. Hardware-accelerated config editing with multi-cursor support and syntax validation.</p>
+          <p>The code editor from VS Code, running natively. Hardware-accelerated config editing with multi-cursor
+            support and syntax validation.</p>
         </div>
       </div>
       <!-- System Blueprint Visualization -->
@@ -211,89 +274,138 @@
       <div class="features-grid">
         <div class="feature-card reveal">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 3l14 9-14 9V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>One-Click Lifecycle</h3>
-          <p>Start, stop, restart, and force-kill your server with single button clicks. Automatic restart on crash with configurable delay.</p>
+          <p>Start, stop, restart, and force-kill your server with single button clicks. Automatic restart on crash with
+            configurable delay.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 17l6-6 4 4 6-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Live Console</h3>
-          <p>Real-time log streaming direct from the Java process. Syntax-highlighted INFO, WARN, ERROR levels. Type commands inline.</p>
+          <p>Real-time log streaming direct from the Java process. Syntax-highlighted INFO, WARN, ERROR levels. Type
+            commands inline.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10L2 7m10 10L2 17m10-5l10 5M12 17l10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zm0 10L2 7m10 10L2 17m10-5l10 5M12 17l10-5" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Mod Loader Suite</h3>
-          <p>One-click management for Fabric, Forge, Quilt, and NeoForge. Dynamic version fetching from meta-APIs with intelligent release/snapshot filtering.</p>
+          <p>One-click management for Fabric, Forge, Quilt, and NeoForge. Dynamic version fetching from meta-APIs with
+            intelligent release/snapshot filtering.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6" />
+              <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
           </div>
           <h3>Modrinth Mod Browser</h3>
-          <p>Search, preview, and one-click install mods and plugins directly from Modrinth. Filter by version, loader, category, and sort by downloads.</p>
+          <p>Search, preview, and one-click install mods and plugins directly from Modrinth. Filter by version, loader,
+            category, and sort by downloads.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+            </svg>
           </div>
           <h3>World Map</h3>
-          <p>Render an overhead view of your Minecraft world directly from region files. Pan, zoom, and double-click to copy teleport commands.</p>
+          <p>Render an overhead view of your Minecraft world directly from region files. Pan, zoom, and double-click to
+            copy teleport commands.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Intelligence & Deep Scan</h3>
-          <p>Real-time telemetry meets file-system archaeology. Track player retention, activity heatmaps, and exhaustive statistics pulled directly from world data.</p>
+          <p>Real-time telemetry meets file-system archaeology. Track player retention, activity heatmaps, and
+            exhaustive statistics pulled directly from world data.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.6"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Local First · Private</h3>
-          <p>Your data stays on your machine. No cloud tracking, no hidden accounts, no telemetry sent to us. Purely local server orchestration.</p>
+          <p>Your data stays on your machine. No cloud tracking, no hidden accounts, no telemetry sent to us. Purely
+            local server orchestration.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.6" />
+              <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.6" />
+            </svg>
           </div>
           <h3>Studio-Grade Toolbar</h3>
-          <p>A seamless, frameless experience. Native window management integrated directly into the thematic shell with a studio-engine status pill.</p>
+          <p>A seamless, frameless experience. Native window management integrated directly into the thematic shell with
+            a studio-engine status pill.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Studio Config Editor</h3>
-          <p>Powered by the Monaco Engine. Syntax highlighting, error detection, and bracket matching for all your server.properties and JSON configs.</p>
+          <p>Powered by the Monaco Engine. Syntax highlighting, error detection, and bracket matching for all your
+            server.properties and JSON configs.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Network & DDoS Radar</h3>
-          <p>Real-time bandwidth visualization. Track inbound/outbound packets and monitor connection health with high-fidelity system telemetry.</p>
+          <p>Real-time bandwidth visualization. Track inbound/outbound packets and monitor connection health with
+            high-fidelity system telemetry.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Client Launcher</h3>
-          <p>Launch Prism Launcher or Vanilla Minecraft directly from the Dashboard. Automatic detection for standard install paths and system protocols.</p>
+          <p>Launch Prism Launcher or Vanilla Minecraft directly from the Dashboard. Automatic detection for standard
+            install paths and system protocols.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>Smart Alert Snooze</h3>
-          <p>Clutter-free operations. Snooze system alerts for 15m, 1h, or hide them permanently. Persistent preferences that survive app restarts.</p>
+          <p>Clutter-free operations. Snooze system alerts for 15m, 1h, or hide them permanently. Persistent preferences
+            that survive app restarts.</p>
         </div>
-    </div>
+      </div>
   </section>
 
   <!-- ── AI Intelligence ── -->
@@ -301,9 +413,12 @@
     <div class="ai-bg-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-tag" style="background: rgba(139,92,246,0.15); color: #a78bfa; border-color: rgba(139,92,246,0.3);">AI Intelligence</div>
+        <div class="section-tag"
+          style="background: rgba(139,92,246,0.15); color: #a78bfa; border-color: rgba(139,92,246,0.3);">AI Intelligence
+        </div>
         <h2>Your server has<br /><span class="gradient-text-ai">an AI copilot.</span></h2>
-        <p>BlockPanel's AI Assistant connects directly to your live server — reading state, logs, and your curated knowledge base to answer anything about your realm.</p>
+        <p>BlockPanel's AI Assistant connects directly to your live server — reading state, logs, and your curated
+          knowledge base to answer anything about your realm.</p>
       </div>
       <div class="ai-demo-grid reveal">
         <!-- Chat mockup -->
@@ -359,28 +474,32 @@ Last 3 crashes: 0 ← stable runtime</pre>
             <div class="ai-feature-icon">🧠</div>
             <div class="ai-feature-text">
               <h4>Live Context Injection</h4>
-              <p>Server state, config, player count, uptime, and last 15 log lines — automatically injected into every message when context is enabled.</p>
+              <p>Server state, config, player count, uptime, and last 15 log lines — automatically injected into every
+                message when context is enabled.</p>
             </div>
           </div>
           <div class="ai-feature-item reveal reveal-delay-1">
             <div class="ai-feature-icon">📚</div>
             <div class="ai-feature-text">
               <h4>Knowledge Base</h4>
-              <p>Feed the AI any URL — Minecraft wiki, Paper docs, your own guides. Scraped, stored as markdown, and injected into context automatically.</p>
+              <p>Feed the AI any URL — Minecraft wiki, Paper docs, your own guides. Scraped, stored as markdown, and
+                injected into context automatically.</p>
             </div>
           </div>
           <div class="ai-feature-item reveal reveal-delay-2">
             <div class="ai-feature-icon">🔌</div>
             <div class="ai-feature-text">
               <h4>5 Provider Support</h4>
-              <p>OpenAI · Google Gemini · OpenRouter · Custom endpoint · Ollama (local). One UI, any model. Your API key, your data.</p>
+              <p>OpenAI · Google Gemini · OpenRouter · Custom endpoint · Ollama (local). One UI, any model. Your API
+                key, your data.</p>
             </div>
           </div>
           <div class="ai-feature-item reveal">
             <div class="ai-feature-icon">🔒</div>
             <div class="ai-feature-text">
               <h4>Identity Pinned</h4>
-              <p>The model's name and provider are baked into the system prompt. No hallucinated identity — the AI always knows exactly what it is.</p>
+              <p>The model's name and provider are baked into the system prompt. No hallucinated identity — the AI
+                always knows exactly what it is.</p>
             </div>
           </div>
         </div>
@@ -426,22 +545,35 @@ Last 3 crashes: 0 ← stable runtime</pre>
       <div class="section-header reveal">
         <div class="section-tag">Aesthetics</div>
         <h2>Visual Excellence. By Default.</h2>
-        <p>BlockPanel isn't just a manager — it's a canvas. Choose from over 60 high-fidelity themes built for operators who demand style and substance in equal measure.</p>
+        <p>BlockPanel isn't just a manager — it's a canvas. Choose from over 60 high-fidelity themes built for operators
+          who demand style and substance in equal measure.</p>
       </div>
       <div class="themes-showcase reveal">
         <div class="theme-strip">
-          <div class="theme-swatch" style="--swatch-bg: #8b5cf6; --swatch-accent: #34d399;" data-name="Neon Genesis"><span>Unit-01</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #ef4444; --swatch-accent: #5eead4;" data-name="Neo-Tokyo"><span>Akira</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #111827; --swatch-accent: #f472b6;" data-name="Synthwave"><span>Outrun</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #1e293b; --swatch-accent: #fbbf24;" data-name="Fallout"><span>Vault-Tec</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #000000; --swatch-accent: #e11d48;" data-name="Persona 5"><span>Phantom</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #fdf2f8; --swatch-accent: #ec4899;" data-name="Dreamhouse"><span>Pastel</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #064e3b; --swatch-accent: #4ade80;" data-name="Matrix"><span>Hacker</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #450a0a; --swatch-accent: #fca5a5;" data-name="Bloodborne"><span>Yharnam</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #374151; --swatch-accent: #8b5cf6;" data-name="Evangelion"><span>Unit-02</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #064e3b; --swatch-accent: #10b981;" data-name="Forest"><span>Sylvan</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #1e1b4b; --swatch-accent: #38bdf8;" data-name="Cyber City"><span>Neo-Neon</span></div>
-          <div class="theme-swatch" style="--swatch-bg: #431407; --swatch-accent: #f97316;" data-name="Fallout"><span>Wasteland</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #8b5cf6; --swatch-accent: #34d399;" data-name="Neon Genesis">
+            <span>Unit-01</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #ef4444; --swatch-accent: #5eead4;" data-name="Neo-Tokyo">
+            <span>Akira</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #111827; --swatch-accent: #f472b6;" data-name="Synthwave">
+            <span>Outrun</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #1e293b; --swatch-accent: #fbbf24;" data-name="Fallout">
+            <span>Vault-Tec</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #000000; --swatch-accent: #e11d48;" data-name="Persona 5">
+            <span>Phantom</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #fdf2f8; --swatch-accent: #ec4899;" data-name="Dreamhouse">
+            <span>Pastel</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #064e3b; --swatch-accent: #4ade80;" data-name="Matrix">
+            <span>Hacker</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #450a0a; --swatch-accent: #fca5a5;" data-name="Bloodborne">
+            <span>Yharnam</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #374151; --swatch-accent: #8b5cf6;" data-name="Evangelion">
+            <span>Unit-02</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #064e3b; --swatch-accent: #10b981;" data-name="Forest">
+            <span>Sylvan</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #1e1b4b; --swatch-accent: #38bdf8;" data-name="Cyber City">
+            <span>Neo-Neon</span></div>
+          <div class="theme-swatch" style="--swatch-bg: #431407; --swatch-accent: #f97316;" data-name="Fallout">
+            <span>Wasteland</span></div>
         </div>
       </div>
       <div class="themes-description reveal">
@@ -479,7 +611,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
           <div class="step-number">01</div>
           <div class="step-content">
             <h3>Download & Install</h3>
-            <p>Grab the NSIS installer or MSI package below. Run it — no dependencies, no runtimes, no bloat. BlockPanel is fully self-contained.</p>
+            <p>Grab the NSIS installer or MSI package below. Run it — no dependencies, no runtimes, no bloat. BlockPanel
+              is fully self-contained.</p>
           </div>
         </div>
         <div class="step-connector" aria-hidden="true"></div>
@@ -487,7 +620,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
           <div class="step-number">02</div>
           <div class="step-content">
             <h3>Configure Your Server</h3>
-            <p>Open Settings. Set your server directory and download a Minecraft JAR from the built-in manager. BlockPanel handles EULA and server.properties automatically.</p>
+            <p>Open Settings. Set your server directory and download a Minecraft JAR from the built-in manager.
+              BlockPanel handles EULA and server.properties automatically.</p>
           </div>
         </div>
         <div class="step-connector" aria-hidden="true"></div>
@@ -495,7 +629,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
           <div class="step-number">03</div>
           <div class="step-content">
             <h3>Optimize with Intelligence</h3>
-            <p>Click the Start button. beyond basic logs, use the new Intelligence tab and Network Radar to track player loyalty and system health in real-time.</p>
+            <p>Click the Start button. beyond basic logs, use the new Intelligence tab and Network Radar to track player
+              loyalty and system health in real-time.</p>
           </div>
         </div>
       </div>
@@ -508,22 +643,31 @@ Last 3 crashes: 0 ← stable runtime</pre>
       <div class="portable-text reveal">
         <div class="section-tag">Portable Mode</div>
         <h2>Take your server anywhere.</h2>
-        <p>BlockPanel is designed to be truly portable. Drop the app and a <code>portable.txt</code> file in the same folder — all configs, JARs, and backups stay right there.</p>
+        <p>BlockPanel is designed to be truly portable. Drop the app and a <code>portable.txt</code> file in the same
+          folder — all configs, JARs, and backups stay right there.</p>
         <ul class="portable-list">
           <li>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16">
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             Run from a USB drive
           </li>
           <li>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16">
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             Zero AppData pollution
           </li>
           <li>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16">
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             Project-scoped installations
           </li>
           <li>
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16"><path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="16" height="16">
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             No admin rights needed
           </li>
         </ul>
@@ -539,7 +683,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
             <div class="tree-row indent"><span class="tree-icon">🟩</span> <span>1.21.4/server.jar</span></div>
             <div class="tree-row"><span class="tree-icon">📁</span> <span>world/</span></div>
             <div class="tree-row"><span class="tree-icon">⚙️</span> <span>server_config.json</span></div>
-            <div class="tree-row highlight"><span class="tree-icon">📄</span> <span class="accent-text">portable.txt</span> <span class="badge-new">← magic file</span></div>
+            <div class="tree-row highlight"><span class="tree-icon">📄</span> <span
+                class="accent-text">portable.txt</span> <span class="badge-new">← magic file</span></div>
             <div class="tree-row"><span class="tree-icon">🖥️</span> <span>BlockPanel.exe</span></div>
           </div>
         </div>
@@ -553,7 +698,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
       <div class="section-header reveal">
         <div class="section-tag">Specifications</div>
         <h2>Built for modern hardware.</h2>
-        <p>Lightweight client, powerful orchestration. BlockPanel scales from local testing to large community servers.</p>
+        <p>Lightweight client, powerful orchestration. BlockPanel scales from local testing to large community servers.
+        </p>
       </div>
       <div class="specs-grid reveal">
         <div class="spec-item">
@@ -586,15 +732,15 @@ Last 3 crashes: 0 ← stable runtime</pre>
         </div>
         <div class="spec-item spec-census">
           <div class="spec-label">Project Census</div>
-          <div class="spec-value">59,500+ Lines of Source Code</div>
-          <div class="spec-note">Verified across 171 individual source files</div>
+          <div class="spec-value">60,100+ Lines of Source Code</div>
+          <div class="spec-note">Verified across 174+ individual source files</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── Dependency Constellation ── -->
-  <section class="section constellation">
+  <section class="section constellation" id="constellation">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-tag">Ecosystem</div>
@@ -602,16 +748,46 @@ Last 3 crashes: 0 ← stable runtime</pre>
         <p>A curation of the world's most trusted high-performance libraries.</p>
       </div>
       <div class="constellation-grid">
-        <div class="gem reveal"><h5>Tokio</h5><p>Scalable async runtime for non-blocking I/O orchestration.</p></div>
-        <div class="gem reveal"><h5>Serde</h5><p>Atomic-speed data serialization for reliable configuration.</p></div>
-        <div class="gem reveal"><h5>Rusqlite</h5><p>High-performance local storage for player intelligence.</p></div>
-        <div class="gem reveal"><h5>Reqwest</h5><p>Resilient HTTP client for real-time metadata discovery.</p></div>
-        <div class="gem reveal"><h5>Sysinfo</h5><p>Cross-platform hardware ergonomics and telemetry.</p></div>
-        <div class="gem reveal"><h5>Chrono</h5><p>Thread-safe timekeeping for precise event logging.</p></div>
-        <div class="gem reveal"><h5>Recharts</h5><p>Composable chart library powering real-time telemetry sparklines.</p></div>
-        <div class="gem reveal"><h5>Monaco</h5><p>The VS Code editor engine — syntax highlighting, multi-cursor, bracket matching.</p></div>
-        <div class="gem reveal"><h5>Scraper</h5><p>HTML parsing for the Knowledge Base — fetches and extracts clean text from any URL.</p></div>
-        <div class="gem reveal"><h5>Rcon</h5><p>Minecraft RCON protocol client for administrative side-channel commands.</p></div>
+        <div class="gem reveal">
+          <h5>Tokio</h5>
+          <p>Scalable async runtime for non-blocking I/O orchestration.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Serde</h5>
+          <p>Atomic-speed data serialization for reliable configuration.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Rusqlite</h5>
+          <p>High-performance local storage for player intelligence.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Reqwest</h5>
+          <p>Resilient HTTP client for real-time metadata discovery.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Sysinfo</h5>
+          <p>Cross-platform hardware ergonomics and telemetry.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Chrono</h5>
+          <p>Thread-safe timekeeping for precise event logging.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Recharts</h5>
+          <p>Composable chart library powering real-time telemetry sparklines.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Monaco</h5>
+          <p>The VS Code editor engine — syntax highlighting, multi-cursor, bracket matching.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Scraper</h5>
+          <p>HTML parsing for the Knowledge Base — fetches and extracts clean text from any URL.</p>
+        </div>
+        <div class="gem reveal">
+          <h5>Rcon</h5>
+          <p>Minecraft RCON protocol client for administrative side-channel commands.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -632,23 +808,33 @@ Last 3 crashes: 0 ← stable runtime</pre>
 
         <div class="faq-item">
           <h3>What is BlockPanel, exactly?</h3>
-          <p>It's a desktop app for Windows that manages Minecraft Java Edition servers. Instead of typing commands into a black terminal window, you get a full UI — start/stop controls, real-time logs, mod installer, world map, player stats, and an AI assistant — all in one place. No command line required.</p>
+          <p>It's a desktop app for Windows that manages Minecraft Java Edition servers. Instead of typing commands into
+            a black terminal window, you get a full UI — start/stop controls, real-time logs, mod installer, world map,
+            player stats, and an AI assistant — all in one place. No command line required.</p>
         </div>
         <div class="faq-item">
           <h3>Do I need to install Java manually?</h3>
-          <p>BlockPanel scans your system for existing Java installs automatically. If nothing is found, the Pre-flight panel tells you exactly which version you need (Java 17 for 1.17–1.20, Java 21 for 1.21+) and blocks the Start button until it's resolved. You install Java once — BlockPanel remembers the path.</p>
+          <p>BlockPanel scans your system for existing Java installs automatically. If nothing is found, the Pre-flight
+            panel tells you exactly which version you need (Java 17 for 1.17–1.20, Java 21 for 1.21+) and blocks the
+            Start button until it's resolved. You install Java once — BlockPanel remembers the path.</p>
         </div>
         <div class="faq-item">
           <h3>Do I need a Minecraft account to host a server?</h3>
-          <p>No. Hosting a Java Edition server does not require a Mojang or Microsoft account. BlockPanel downloads official server JARs directly from Mojang's CDN. Players connecting to your server need accounts unless you enable offline mode in server.properties.</p>
+          <p>No. Hosting a Java Edition server does not require a Mojang or Microsoft account. BlockPanel downloads
+            official server JARs directly from Mojang's CDN. Players connecting to your server need accounts unless you
+            enable offline mode in server.properties.</p>
         </div>
         <div class="faq-item">
           <h3>How do I actually start a server for the first time?</h3>
-          <p>Open Settings → set your server directory (an empty folder works) → go to Versions and download a server JAR → return to Settings and select that JAR → click Start on the Dashboard. The Pre-flight system checks everything before launch and tells you exactly what's wrong if anything fails.</p>
+          <p>Open Settings → set your server directory (an empty folder works) → go to Versions and download a server
+            JAR → return to Settings and select that JAR → click Start on the Dashboard. The Pre-flight system checks
+            everything before launch and tells you exactly what's wrong if anything fails.</p>
         </div>
         <div class="faq-item">
           <h3>Does BlockPanel host my server online? Do I need port forwarding?</h3>
-          <p>BlockPanel runs the server on your own machine. It does not provide hosting, cloud infrastructure, or networking. For players outside your local network to connect, you need to port-forward TCP 25565 on your router to your machine's local IP. BlockPanel doesn't handle this — it's a router-level setting.</p>
+          <p>BlockPanel runs the server on your own machine. It does not provide hosting, cloud infrastructure, or
+            networking. For players outside your local network to connect, you need to port-forward TCP 25565 on your
+            router to your machine's local IP. BlockPanel doesn't handle this — it's a router-level setting.</p>
         </div>
 
         <div class="faq-category">
@@ -657,19 +843,30 @@ Last 3 crashes: 0 ← stable runtime</pre>
 
         <div class="faq-item">
           <h3>Can I use Paper, Purpur, Fabric, or Forge — not just vanilla?</h3>
-          <p>Yes. The Versions panel has separate tabs for Vanilla, Mod Loaders (Fabric, Forge, NeoForge, Quilt), and Optimized builds. Download any of them and point BlockPanel at the resulting JAR. The Mods panel integrates with Modrinth for mod/plugin search and install.</p>
+          <p>Yes. The Versions panel has separate tabs for Vanilla, Mod Loaders (Fabric, Forge, NeoForge, Quilt), and
+            Optimized builds. Download any of them and point BlockPanel at the resulting JAR. The Mods panel integrates
+            with Modrinth for mod/plugin search and install.</p>
         </div>
         <div class="faq-item">
           <h3>How do I enable RCON?</h3>
-          <p>Toggle "Enable RCON" in Settings and set a password. BlockPanel injects the required flags into <code>server.properties</code> non-destructively — it won't overwrite your other settings. Once enabled, the Console's Quick Actions row (TPS, weather, time, save-all) uses RCON as a side-channel so it doesn't compete with the stdin pipe.</p>
+          <p>Toggle "Enable RCON" in Settings and set a password. BlockPanel injects the required flags into
+            <code>server.properties</code> non-destructively — it won't overwrite your other settings. Once enabled, the
+            Console's Quick Actions row (TPS, weather, time, save-all) uses RCON as a side-channel so it doesn't compete
+            with the stdin pipe.</p>
         </div>
         <div class="faq-item">
           <h3>I installed a mod and now the server won't start. What do I do?</h3>
-          <p>Check the Console for the crash cause — it will usually name the conflicting mod or missing dependency. Common fixes: wrong mod loader (Fabric mod on a Forge server), incompatible Minecraft version, or a missing required dependency. Use the Mods panel's dependency tree to check requirements. You can disable individual mods without uninstalling using the toggle in the installed mods list.</p>
+          <p>Check the Console for the crash cause — it will usually name the conflicting mod or missing dependency.
+            Common fixes: wrong mod loader (Fabric mod on a Forge server), incompatible Minecraft version, or a missing
+            required dependency. Use the Mods panel's dependency tree to check requirements. You can disable individual
+            mods without uninstalling using the toggle in the installed mods list.</p>
         </div>
         <div class="faq-item">
           <h3>Can I run multiple servers at the same time?</h3>
-          <p>Not from a single BlockPanel instance — it manages one server process at a time. For multiple servers, use <strong>Portable Mode</strong>: drop a <code>portable.txt</code> file next to a copy of BlockPanel.exe in each server's folder. Each instance is fully isolated with its own config, JARs, and database. Each server needs a different port (default 25565, 25566, etc.).</p>
+          <p>Not from a single BlockPanel instance — it manages one server process at a time. For multiple servers, use
+            <strong>Portable Mode</strong>: drop a <code>portable.txt</code> file next to a copy of BlockPanel.exe in
+            each server's folder. Each instance is fully isolated with its own config, JARs, and database. Each server
+            needs a different port (default 25565, 25566, etc.).</p>
         </div>
 
         <div class="faq-category">
@@ -678,15 +875,25 @@ Last 3 crashes: 0 ← stable runtime</pre>
 
         <div class="faq-item">
           <h3>Do I need an API key to use the AI assistant?</h3>
-          <p>Yes. The AI panel connects to external providers (OpenAI, Google Gemini, OpenRouter, etc.) using your own API key. Google Gemini offers free-tier access via <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a> — easiest way to get started at zero cost. Your key is stored locally in <code>llm_config.json</code> and never leaves your machine except in requests to the provider you configure.</p>
+          <p>Yes. The AI panel connects to external providers (OpenAI, Google Gemini, OpenRouter, etc.) using your own
+            API key. Google Gemini offers free-tier access via <a href="https://aistudio.google.com" target="_blank"
+              rel="noopener">aistudio.google.com</a> — easiest way to get started at zero cost. Your key is stored
+            locally in <code>llm_config.json</code> and never leaves your machine except in requests to the provider you
+            configure.</p>
         </div>
         <div class="faq-item">
           <h3>What does "Context ON" actually send to the AI?</h3>
-          <p>When context is enabled, every message includes: server name, current state (online/offline), player count, uptime, JAR path, RAM config, MOTD, world name, difficulty, PVP and whitelist settings, view distance, and the last 15 log lines. It also lists any URLs you've saved to the Knowledge Base. The AI cannot see your file system, passwords, or API keys.</p>
+          <p>When context is enabled, every message includes: server name, current state (online/offline), player count,
+            uptime, JAR path, RAM config, MOTD, world name, difficulty, PVP and whitelist settings, view distance, and
+            the last 15 log lines. It also lists any URLs you've saved to the Knowledge Base. The AI cannot see your
+            file system, passwords, or API keys.</p>
         </div>
         <div class="faq-item">
           <h3>The AI gave me wrong or dangerous advice. What now?</h3>
-          <p>AI assistants can hallucinate. Never run a command suggested by the AI without understanding what it does first — especially anything involving <code>/stop</code>, <code>/kill</code>, file deletions, or permission changes. BlockPanel's AI is a starting point for diagnosis, not an authority. Cross-check with the official Minecraft wiki or Paper docs before acting on sensitive suggestions.</p>
+          <p>AI assistants can hallucinate. Never run a command suggested by the AI without understanding what it does
+            first — especially anything involving <code>/stop</code>, <code>/kill</code>, file deletions, or permission
+            changes. BlockPanel's AI is a starting point for diagnosis, not an authority. Cross-check with the official
+            Minecraft wiki or Paper docs before acting on sensitive suggestions.</p>
         </div>
 
         <div class="faq-category">
@@ -695,35 +902,59 @@ Last 3 crashes: 0 ← stable runtime</pre>
 
         <div class="faq-item">
           <h3>The server crashes immediately after starting. No error in the console.</h3>
-          <p>This usually means the Java process exited before producing output. Causes: wrong JAR type (downloaded a client JAR instead of a server JAR), missing EULA acceptance (run the server manually once to generate <code>eula.txt</code>, then set <code>eula=true</code>), or corrupted JAR (re-download via the Versions panel). The Pre-flight check catches most of these before launch.</p>
+          <p>This usually means the Java process exited before producing output. Causes: wrong JAR type (downloaded a
+            client JAR instead of a server JAR), missing EULA acceptance (run the server manually once to generate
+            <code>eula.txt</code>, then set <code>eula=true</code>), or corrupted JAR (re-download via the Versions
+            panel). The Pre-flight check catches most of these before launch.</p>
         </div>
         <div class="faq-item">
           <h3>BlockPanel says "server is online" but no one can connect.</h3>
-          <p>BlockPanel tracks the process state, not external reachability. If it shows online but players can't connect: (1) check your firewall — Windows Firewall often blocks Java on first launch; (2) verify port forwarding on your router if they're connecting from outside your network; (3) confirm the correct IP address is being used. The Dashboard's server query widget shows live latency and MOTD to verify the port is actually open.</p>
+          <p>BlockPanel tracks the process state, not external reachability. If it shows online but players can't
+            connect: (1) check your firewall — Windows Firewall often blocks Java on first launch; (2) verify port
+            forwarding on your router if they're connecting from outside your network; (3) confirm the correct IP
+            address is being used. The Dashboard's server query widget shows live latency and MOTD to verify the port is
+            actually open.</p>
         </div>
         <div class="faq-item">
           <h3>I deleted my server directory by accident. Can BlockPanel recover it?</h3>
-          <p>No. BlockPanel doesn't move or copy your server files — it points to wherever you placed them. If you have backups created via the Backups panel, restore them there. If not, the world data is gone. This is exactly why the Backups panel exists. Set up automatic backups before you need them.</p>
+          <p>No. BlockPanel doesn't move or copy your server files — it points to wherever you placed them. If you have
+            backups created via the Backups panel, restore them there. If not, the world data is gone. This is exactly
+            why the Backups panel exists. Set up automatic backups before you need them.</p>
         </div>
         <div class="faq-item">
           <h3>Windows Defender is blocking BlockPanel or flagging it as a virus.</h3>
-          <p>BlockPanel is an unsigned executable built with Tauri. Windows SmartScreen flags unsigned apps from unknown publishers — this is a false positive. The full source code is open on GitHub. To proceed: click "More info" on the SmartScreen dialog → "Run anyway." If your IT policy blocks unsigned executables entirely, use the MSI package, which may have different trust handling in enterprise environments.</p>
+          <p>BlockPanel is an unsigned executable built with Tauri. Windows SmartScreen flags unsigned apps from unknown
+            publishers — this is a false positive. The full source code is open on GitHub. To proceed: click "More info"
+            on the SmartScreen dialog → "Run anyway." If your IT policy blocks unsigned executables entirely, use the
+            MSI package, which may have different trust handling in enterprise environments.</p>
         </div>
         <div class="faq-item">
           <h3>The app opens but shows a blank white screen.</h3>
-          <p>BlockPanel uses Windows WebView2 (the same engine as Edge) to render the UI. A blank screen usually means WebView2 isn't installed or is severely outdated. Download the WebView2 runtime from Microsoft's website and install it. If you're on a fresh Windows 11 install, WebView2 should already be present — try running Windows Update first.</p>
+          <p>BlockPanel uses Windows WebView2 (the same engine as Edge) to render the UI. A blank screen usually means
+            WebView2 isn't installed or is severely outdated. Download the WebView2 runtime from Microsoft's website and
+            install it. If you're on a fresh Windows 11 install, WebView2 should already be present — try running
+            Windows Update first.</p>
         </div>
         <div class="faq-item">
           <h3>My server is lagging but CPU and RAM look fine in the Resources panel.</h3>
-          <p>TPS lag isn't always a hardware problem. Common culprits: chunk generation (players exploring new areas), too many entities (item farms, mob farms hitting caps), or a single expensive tick (complex redstone, plugin loops). Install Spark (available in the Mods panel → Quick Essentials → Performance) and run <code>/spark profiler</code> for a precise breakdown of what's eating your tick budget.</p>
+          <p>TPS lag isn't always a hardware problem. Common culprits: chunk generation (players exploring new areas),
+            too many entities (item farms, mob farms hitting caps), or a single expensive tick (complex redstone, plugin
+            loops). Install Spark (available in the Mods panel → Quick Essentials → Performance) and run
+            <code>/spark profiler</code> for a precise breakdown of what's eating your tick budget.</p>
         </div>
         <div class="faq-item">
           <h3>The World Map shows nothing / renders blank tiles.</h3>
-          <p>The map reads <code>.mca</code> region files directly from your server's <code>world/region/</code> folder. If the server has never been started, no region files exist yet — the map will be empty. If it's been started and tiles are still blank, verify the server directory in Settings points to the correct folder containing the <code>world/</code> subdirectory.</p>
+          <p>The map reads <code>.mca</code> region files directly from your server's <code>world/region/</code> folder.
+            If the server has never been started, no region files exist yet — the map will be empty. If it's been
+            started and tiles are still blank, verify the server directory in Settings points to the correct folder
+            containing the <code>world/</code> subdirectory.</p>
         </div>
         <div class="faq-item">
           <h3>Is my server data secure?</h3>
-          <p>BlockPanel is entirely local. No telemetry, no cloud sync, no analytics sent anywhere. Your <code>server_config.json</code>, <code>analytics.db</code>, and all world data stay on your hard drive. The only outbound connections BlockPanel makes are: downloading JARs from Mojang, searching Modrinth, and your AI provider calls (using your own key). You can verify this with a network monitor.</p>
+          <p>BlockPanel is entirely local. No telemetry, no cloud sync, no analytics sent anywhere. Your
+            <code>server_config.json</code>, <code>analytics.db</code>, and all world data stay on your hard drive. The
+            only outbound connections BlockPanel makes are: downloading JARs from Mojang, searching Modrinth, and your
+            AI provider calls (using your own key). You can verify this with a network monitor.</p>
         </div>
 
       </div>
@@ -743,28 +974,43 @@ Last 3 crashes: 0 ← stable runtime</pre>
         <div class="download-card recommended reveal">
           <div class="rec-badge">Recommended</div>
           <div class="dl-icon">
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="8" fill="#4ade8018"/><path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="4" y="4" width="40" height="40" rx="8" fill="#4ade8018" />
+              <path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>NSIS Installer</h3>
           <p>Classic Windows installer. Adds a Start Menu shortcut and supports clean uninstall.</p>
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.7.0_x64-setup.exe" class="btn btn-primary" id="nsis-dl" target="_blank" rel="noopener">
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases"
+            class="btn btn-primary" id="nsis-dl" target="_blank" rel="noopener">
             Download .exe (3.9 MB)
           </a>
         </div>
         <div class="download-card reveal reveal-delay-1">
           <div class="dl-icon">
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="8" fill="#60a5fa18"/><path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="4" y="4" width="40" height="40" rx="8" fill="#60a5fa18" />
+              <path d="M24 14v16m0 0l-6-6m6 6l6-6M14 36h20" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <h3>MSI Package</h3>
           <p>Enterprise-grade Windows Installer package. Compatible with Group Policy tools.</p>
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/download/MainChannel/BlockPanelV2_2.7.0_x64_en-US.msi" class="btn btn-secondary" id="msi-dl" target="_blank" rel="noopener">
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases"
+            class="btn btn-secondary" id="msi-dl" target="_blank" rel="noopener">
             Download .msi (5.5 MB)
           </a>
         </div>
       </div>
       <div class="download-note reveal">
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.25h-1.5v-5h1.5v5zm0-6.5h-1.5v-1.5h1.5v1.5z" fill="currentColor"/></svg>
-        <span>Looking for other versions? View the <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases/tag/MainChannel" target="_blank" rel="noopener">Release Page</a>.</span>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
+          <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.25h-1.5v-5h1.5v5zm0-6.5h-1.5v-1.5h1.5v1.5z"
+            fill="currentColor" />
+        </svg>
+        <span>Looking for other versions? View the <a
+            href="https://github.com/Otterdays/Block-Panel-V2-Public/releases" target="_blank"
+            rel="noopener">Release Page</a>.</span>
       </div>
     </div>
   </section>
@@ -776,10 +1022,10 @@ Last 3 crashes: 0 ← stable runtime</pre>
         <a href="#" class="nav-logo" aria-label="Back to top">
           <div class="logo-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/>
-              <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
-              <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6"/>
-              <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor"/>
+              <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor" />
+              <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.6" />
+              <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.6" />
+              <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor" />
             </svg>
           </div>
           <span>BlockPanel</span>
@@ -791,7 +1037,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
           <h4>Links</h4>
           <a href="#features">Features</a>
           <a href="#download">Download</a>
-          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/issues" target="_blank" rel="noopener">Report a Bug</a>
+          <a href="https://github.com/Otterdays/Block-Panel-V2-Public/issues" target="_blank" rel="noopener">Report a
+            Bug</a>
         </div>
         <div class="footer-col">
           <h4>Tech</h4>
@@ -807,4 +1054,5 @@ Last 3 crashes: 0 ← stable runtime</pre>
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
