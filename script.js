@@ -101,7 +101,7 @@
     { time: '12:55:00', level: 'INFO', cls: 'cl-info',  text: 'Auto-backup completed' },
   ];
 
-  const console_ = document.querySelector('.mockup-console');
+  const console_ = document.querySelector('.mockup-console-full');
   if (!console_) return;
 
   let lineIndex = 0;
@@ -557,5 +557,75 @@
       }
     });
   }, 60000); // WHY: updating every minute is realistic for an uptime display
+})();
+
+/* ============================================================
+ * Sticky download pill — show after user scrolls past hero
+ * ============================================================ */
+(function stickyDownloadPill() {
+  const pill = document.getElementById('sticky-dl');
+  if (!pill) return;
+  const hero = document.querySelector('.hero');
+  const download = document.getElementById('download');
+  if (!hero) return;
+
+  function update() {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    const dlRect = download ? download.getBoundingClientRect() : null;
+    // show after user scrolls past hero, hide once the download section is on screen
+    const pastHero = heroBottom < 0;
+    const atDownload = dlRect && dlRect.top < window.innerHeight && dlRect.bottom > 0;
+    pill.classList.toggle('visible', pastHero && !atDownload);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ============================================================
+ * Count-up number animation for stats (proof-bar + discord-stats)
+ * WHY: engages the eye when stats scroll into view, adds motion
+ * without being gaudy. Uses IntersectionObserver so it only fires once.
+ * ============================================================ */
+(function countUpStats() {
+  const targets = document.querySelectorAll('[data-count]');
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+
+  const animate = (el) => {
+    const end = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const duration = 1200;
+    const start = performance.now();
+    const isInt = Number.isInteger(end);
+
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      const current = end * eased;
+      el.textContent = prefix + (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + end + suffix;
+    }
+    requestAnimationFrame(tick);
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  targets.forEach((el) => {
+    // set to 0 initially so the animation has somewhere to start
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    el.textContent = prefix + '0' + suffix;
+    io.observe(el);
+  });
 })();
 

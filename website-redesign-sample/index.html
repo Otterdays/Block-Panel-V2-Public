@@ -1,0 +1,633 @@
+diff --git a/D:\Minecraft\Block-Panel-V2\Block-Panel-V2\website-redesign-sample\index.html b/D:\Minecraft\Block-Panel-V2\Block-Panel-V2\website-redesign-sample\index.html
+new file mode 100644
+--- /dev/null
++++ b/D:\Minecraft\Block-Panel-V2\Block-Panel-V2\website-redesign-sample\index.html
+@@ -0,0 +1,628 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>BlockPanel Redesign Concept</title>
++  <meta
++    name="description"
++    content="Sample redesign concept for BlockPanel. Native Minecraft server control, AI copilot, private analytics, and portable operations in one desktop app."
++  />
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++  <link
++    href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
++    rel="stylesheet"
++  />
++  <link rel="stylesheet" href="style.css" />
++</head>
++<body>
++  <div class="page-noise" aria-hidden="true"></div>
++
++  <header class="site-header">
++    <div class="container header-inner">
++      <a class="brand" href="#top" aria-label="BlockPanel concept home">
++        <span class="brand-mark">
++          <span></span><span></span><span></span><span></span>
++        </span>
++        <span class="brand-copy">
++          <strong>BlockPanel</strong>
++          <span>Redesign Concept</span>
++        </span>
++      </a>
++      <nav class="header-nav" aria-label="Primary">
++        <a href="#tour">Tour</a>
++        <a href="#trust">Trust</a>
++        <a href="#compare">Compare</a>
++        <a href="#faq">FAQ</a>
++        <a class="header-cta" href="#download">Get Build</a>
++      </nav>
++    </div>
++  </header>
++
++  <main id="top">
++    <section class="hero">
++      <div class="container hero-grid">
++        <div class="hero-copy">
++          <div class="eyebrow-row">
++            <span class="eyebrow">Separate Website Sample</span>
++            <span class="eyebrow ghost">Desktop First</span>
++          </div>
++          <h1>
++            Minecraft control room.
++            <span>Not another web panel.</span>
++          </h1>
++          <p class="hero-lead">
++            Native Windows app for operators who want fast setup, real telemetry, and AI that
++            reads live server state instead of guessing from generic docs.
++          </p>
++          <div class="hero-actions">
++            <a class="btn btn-primary" href="#download">Download Windows Build</a>
++            <a class="btn btn-secondary" href="#tour">See Product Tour</a>
++          </div>
++          <div class="hero-points">
++            <div class="point-card">
++              <span class="point-label">Install</span>
++              <strong>4 MB</strong>
++              <p>No daemon. No Docker. No account wall.</p>
++            </div>
++            <div class="point-card">
++              <span class="point-label">Engine</span>
++              <strong>73 Commands</strong>
++              <p>Typed Tauri bridge between React shell and Rust core.</p>
++            </div>
++            <div class="point-card">
++              <span class="point-label">AI</span>
++              <strong>5 Providers</strong>
++              <p>Context-aware assistant with logs, uptime, RAM, player count.</p>
++            </div>
++          </div>
++        </div>
++
++        <aside class="hero-stage" aria-label="BlockPanel concept mockup">
++          <div class="stage-ribbon">
++            <span>Native shell</span>
++            <span>Private analytics</span>
++            <span>Portable mode</span>
++          </div>
++          <div class="stage-window">
++            <div class="window-topbar">
++              <div class="traffic-lights">
++                <span class="red"></span>
++                <span class="amber"></span>
++                <span class="green"></span>
++              </div>
++              <div class="window-title">Operations Deck / Otterdays SMP</div>
++              <div class="window-chip">v2.8 concept</div>
++            </div>
++            <div class="window-body">
++              <div class="left-rail">
++                <span class="rail-label">Server</span>
++                <button class="rail-item active" type="button">Dashboard</button>
++                <button class="rail-item" type="button">Console</button>
++                <button class="rail-item" type="button">Players</button>
++                <button class="rail-item" type="button">Mods</button>
++                <span class="rail-label">Intelligence</span>
++                <button class="rail-item" type="button">AI</button>
++                <button class="rail-item" type="button">Audit</button>
++              </div>
++              <div class="stage-main">
++                <div class="status-row">
++                  <div class="stat-tile accent">
++                    <span>TPS</span>
++                    <strong>20.0</strong>
++                    <em>nominal</em>
++                  </div>
++                  <div class="stat-tile">
++                    <span>RAM</span>
++                    <strong>4.1 / 8G</strong>
++                    <em>51%</em>
++                  </div>
++                  <div class="stat-tile">
++                    <span>Players</span>
++                    <strong>3 / 20</strong>
++                    <em>Overworld live</em>
++                  </div>
++                </div>
++                <div class="stage-columns">
++                  <section class="feed-card">
++                    <header>
++                      <span>Live Ops Feed</span>
++                      <span class="mini-chip">Realtime</span>
++                    </header>
++                    <ul class="feed-list">
++                      <li><span>12:31</span><strong>Ryan joined the game</strong></li>
++                      <li><span>12:35</span><strong>Overworld holding 20.0 TPS</strong></li>
++                      <li><span>12:41</span><strong>Backup completed in 11s</strong></li>
++                      <li><span>12:52</span><strong>Chunk generation spike near X -2048</strong></li>
++                    </ul>
++                  </section>
++                  <section class="intel-card">
++                    <header>
++                      <span>AI Context Snapshot</span>
++                      <span class="mini-chip alt">Context ON</span>
++                    </header>
++                    <pre>state: online
++players: 3 / 20
++jar: paper-1.21.4
++ram: -Xms4G -Xmx8G
++last_warn: chunk gen spike
++saved_urls: 3
++provider: gemini</pre>
++                  </section>
++                </div>
++                <div class="stage-footer">
++                  <span>zero telemetry</span>
++                  <span>embedded sqlite</span>
++                  <span>monaco configs</span>
++                  <span>portable.txt ready</span>
++                </div>
++              </div>
++            </div>
++          </div>
++        </aside>
++      </div>
++    </section>
++
++    <section class="proof-strip">
++      <div class="container proof-grid">
++        <div class="proof-item">
++          <span class="proof-kicker">Memory</span>
++          <strong>~40 MB idle</strong>
++          <p>Desktop shell without Electron overhead.</p>
++        </div>
++        <div class="proof-item">
++          <span class="proof-kicker">Storage</span>
++          <strong>Embedded SQLite</strong>
++          <p>Player intelligence and heatmaps stay local.</p>
++        </div>
++        <div class="proof-item">
++          <span class="proof-kicker">Mods</span>
++          <strong>Modrinth built in</strong>
++          <p>Search, install, inspect dependencies from one place.</p>
++        </div>
++        <div class="proof-item">
++          <span class="proof-kicker">Safety</span>
++          <strong>Audit fixed 6 issues</strong>
++          <p>SSRF, traversal, injection, shellout, mutex, key redaction.</p>
++        </div>
++      </div>
++    </section>
++
++    <section class="tour-section" id="tour">
++      <div class="container section-shell">
++        <div class="section-heading">
++          <p class="section-tag">Product Tour</p>
++          <h2>One route. Many systems.</h2>
++          <p>
++            Sample layout compresses sprawling feature wall into guided stations. Each tab holds
++            one job: operate, diagnose, secure, or move.
++          </p>
++        </div>
++
++        <div class="tour-shell">
++          <div class="tour-tabs" role="tablist" aria-label="Sample tour tabs">
++            <button class="tour-tab active" type="button" role="tab" aria-selected="true" data-tour="ops">Operations Deck</button>
++            <button class="tour-tab" type="button" role="tab" aria-selected="false" data-tour="ai">AI Copilot</button>
++            <button class="tour-tab" type="button" role="tab" aria-selected="false" data-tour="private">Private Intelligence</button>
++            <button class="tour-tab" type="button" role="tab" aria-selected="false" data-tour="portable">Portable Mode</button>
++          </div>
++
++          <div class="tour-panels">
++            <article class="tour-panel active" data-panel="ops">
++              <div class="tour-copy">
++                <span class="panel-tag">Operations Deck</span>
++                <h3>Start, watch, intervene, recover.</h3>
++                <p>
++                  Dashboard, console, players, versions, mods, backups, scheduler. Sample concept
++                  turns feature inventory into one guided command deck instead of a long stack of
++                  isolated promo cards.
++                </p>
++                <ul class="bullet-list">
++                  <li>Single-click lifecycle and crash recovery</li>
++                  <li>Inline console with quick RCON actions</li>
++                  <li>Version manager for vanilla and mod loaders</li>
++                  <li>Backups and schedules without leaving app</li>
++                </ul>
++              </div>
++              <div class="tour-visual diagram ops-visual">
++                <div class="diagram-node wide">Dashboard heartbeat + live status</div>
++                <div class="diagram-rail"></div>
++                <div class="diagram-grid">
++                  <div class="diagram-node">Console</div>
++                  <div class="diagram-node">Players</div>
++                  <div class="diagram-node">Versions</div>
++                  <div class="diagram-node">Mods</div>
++                  <div class="diagram-node">Backups</div>
++                  <div class="diagram-node">Scheduler</div>
++                </div>
++              </div>
++            </article>
++
++            <article class="tour-panel" data-panel="ai">
++              <div class="tour-copy">
++                <span class="panel-tag">AI Copilot</span>
++                <h3>Reads live server state before it speaks.</h3>
++                <p>
++                  This sample keeps AI section technical. No generic chatbot theater. Show exact
++                  inputs, provider choice, and safety boundary.
++                </p>
++                <ul class="bullet-list">
++                  <li>5 providers: OpenAI, Gemini, OpenRouter, Custom, Ollama</li>
++                  <li>Context injection: state, players, uptime, RAM, logs, saved URLs</li>
++                  <li>Knowledge snapshots stored as markdown on disk</li>
++                  <li>No file-system access or secret leakage in prompt context</li>
++                </ul>
++              </div>
++              <div class="tour-visual prompt-card">
++                <div class="prompt-head">
++                  <span>Injected Context</span>
++                  <span>JEPPY / gemini-3.1-flash-lite</span>
++                </div>
++                <pre># live state
++server: Otterdays SMP
++state: online
++players: 3 / 20
++uptime: 4h 22m
++
++# recent warning
++chunk generation spike
++
++# knowledge base
++paper docs
++spark profiler
++minecraft wiki</pre>
++              </div>
++            </article>
++
++            <article class="tour-panel" data-panel="private">
++              <div class="tour-copy">
++                <span class="panel-tag">Private Intelligence</span>
++                <h3>Analytics without plugin tax.</h3>
++                <p>
++                  Intelligence layer should feel like trust signal, not marketing garnish. This
++                  sample gives it dedicated room with technical proof.
++                </p>
++                <ul class="bullet-list">
++                  <li>Deep scans stats and advancements from world files</li>
++                  <li>Retention, heatmaps, top players, death sites, session history</li>
++                  <li>Embedded SQLite keeps data local</li>
++                  <li>Security audit fixes surfaced as first-class trust block</li>
++                </ul>
++              </div>
++              <div class="tour-visual analytics-stack">
++                <div class="stack-row">
++                  <span>stats/</span>
++                  <strong>playtime, blocks, deaths</strong>
++                </div>
++                <div class="stack-row">
++                  <span>advancements/</span>
++                  <strong>progress snapshots</strong>
++                </div>
++                <div class="stack-row">
++                  <span>logs</span>
++                  <strong>joins, crashes, last seen</strong>
++                </div>
++                <div class="stack-row highlight">
++                  <span>sqlite</span>
++                  <strong>heatmaps / retention / leaderboards</strong>
++                </div>
++              </div>
++            </article>
++
++            <article class="tour-panel" data-panel="portable">
++              <div class="tour-copy">
++                <span class="panel-tag">Portable Mode</span>
++                <h3>Move whole control room with one folder.</h3>
++                <p>
++                  Sample redesign keeps portable story inside product tour instead of burying it in
++                  mid-page. Strong differentiator for mod devs and small hosts.
++                </p>
++                <ul class="bullet-list">
++                  <li><code>portable.txt</code> flips app into folder-scoped mode</li>
++                  <li>Run from USB, temp rigs, or isolated test folders</li>
++                  <li>No AppData pollution</li>
++                  <li>Easy multi-instance workflow for different servers and ports</li>
++                </ul>
++              </div>
++              <div class="tour-visual file-cabinet">
++                <div class="cabinet-line"><span>BlockPanel.exe</span><em>desktop shell</em></div>
++                <div class="cabinet-line active"><span>portable.txt</span><em>mode switch</em></div>
++                <div class="cabinet-line"><span>server_config.json</span><em>local config</em></div>
++                <div class="cabinet-line"><span>analytics.db</span><em>private intelligence</em></div>
++                <div class="cabinet-line"><span>world/</span><em>same folder, same project</em></div>
++              </div>
++            </article>
++          </div>
++        </div>
++      </div>
++    </section>
++
++    <section class="reasons-section">
++      <div class="container reasons-grid">
++        <div class="reason-intro">
++          <p class="section-tag">Why It Wins</p>
++          <h2>Three clear advantages.</h2>
++          <p>
++            This concept keeps value props short, sharp, and tied to operator reality instead of
++            padded copy.
++          </p>
++        </div>
++        <article class="reason-card">
++          <span class="reason-no">01</span>
++          <h3>Local-first by default</h3>
++          <p>
++            Your configs, backups, analytics, and AI settings stay on your machine. No hosted
++            control plane. No surprise account system.
++          </p>
++        </article>
++        <article class="reason-card">
++          <span class="reason-no">02</span>
++          <h3>AI with actual context</h3>
++          <p>
++            Server state, last log lines, RAM, player count, saved docs. Real debugging substrate,
++            not generic chat wrapper.
++          </p>
++        </article>
++        <article class="reason-card">
++          <span class="reason-no">03</span>
++          <h3>Fast path to useful</h3>
++          <p>
++            Download, pick server folder, fetch jar, start server. Portable mode and built-in tools
++            slash setup drag.
++          </p>
++        </article>
++      </div>
++    </section>
++
++    <section class="trust-section" id="trust">
++      <div class="container section-shell">
++        <div class="section-heading split">
++          <div>
++            <p class="section-tag">Trust Stack</p>
++            <h2>Architecture, audit, requirements.</h2>
++          </div>
++          <p>
++            Sample redesign merges under-the-hood, security, specs, and dependency proof into one
++            band so technical trust lives in one place.
++          </p>
++        </div>
++
++        <div class="trust-shell">
++          <div class="trust-tabs" role="tablist" aria-label="Trust tabs">
++            <button class="trust-tab active" type="button" data-trust="arch">Architecture</button>
++            <button class="trust-tab" type="button" data-trust="security">Security</button>
++            <button class="trust-tab" type="button" data-trust="specs">Specs</button>
++          </div>
++
++          <div class="trust-panels">
++            <article class="trust-panel active" data-trust-panel="arch">
++              <div class="flow-diagram">
++                <div class="flow-box">React shell</div>
++                <div class="flow-arrow"></div>
++                <div class="flow-box">Tauri IPC / 73 commands</div>
++                <div class="flow-arrow"></div>
++                <div class="flow-box">Rust core</div>
++                <div class="flow-arrow split"></div>
++                <div class="flow-branches">
++                  <div class="flow-box small">Tokio runtime</div>
++                  <div class="flow-box small">SQLite intelligence</div>
++                  <div class="flow-box small">LLM relay</div>
++                </div>
++              </div>
++              <div class="trust-copy">
++                <h3>Native binary. Web UI. No middleware layer.</h3>
++                <p>
++                  Rust backend owns process lifecycle, telemetry, analytics, backups, world map, and
++                  AI relay. React handles operator surface. Tauri connects both without Electron.
++                </p>
++              </div>
++            </article>
++
++            <article class="trust-panel" data-trust-panel="security">
++              <div class="security-grid">
++                <div class="security-card">
++                  <span>SSRF</span>
++                  <strong>blocked via DNS + internal-IP checks</strong>
++                </div>
++                <div class="security-card">
++                  <span>Traversal</span>
++                  <strong>safe join + canonical path guards</strong>
++                </div>
++                <div class="security-card">
++                  <span>Injection</span>
++                  <strong>newline, NUL, shellout, token redaction fixes</strong>
++                </div>
++              </div>
++              <div class="trust-copy">
++                <h3>Audit language stays explicit.</h3>
++                <p>
++                  Concept keeps fixed findings visible. Security proof should not hide behind vague
++                  "enterprise-grade" slogans.
++                </p>
++              </div>
++            </article>
++
++            <article class="trust-panel" data-trust-panel="specs">
++              <div class="spec-grid">
++                <div class="spec-box"><span>OS</span><strong>Windows 10 / 11</strong></div>
++                <div class="spec-box"><span>Java</span><strong>17 / 21</strong></div>
++                <div class="spec-box"><span>Runtime</span><strong>~40 MB idle</strong></div>
++                <div class="spec-box"><span>Storage</span><strong>Embedded SQLite</strong></div>
++                <div class="spec-box"><span>Themes</span><strong>60+</strong></div>
++                <div class="spec-box"><span>Providers</span><strong>5</strong></div>
++              </div>
++              <div class="trust-copy">
++                <h3>Hard facts stay scannable.</h3>
++                <p>
++                  Specs should be concise, high-contrast, and adjacent to trust content so they help
++                  decisions instead of getting buried late in page.
++                </p>
++              </div>
++            </article>
++          </div>
++        </div>
++      </div>
++    </section>
++
++    <section class="compare-section" id="compare">
++      <div class="container section-shell">
++        <div class="section-heading">
++          <p class="section-tag">Honest Compare</p>
++          <h2>Desktop command room vs hosting control plane.</h2>
++          <p>
++            Keep comparison honest. Single-operator desktop tool wins different jobs than
++            multi-node hosting stack.
++          </p>
++        </div>
++
++        <div class="compare-table-wrap">
++          <table class="compare-table">
++            <thead>
++              <tr>
++                <th>Question</th>
++                <th>BlockPanel</th>
++                <th>Typical Web Panel</th>
++              </tr>
++            </thead>
++            <tbody>
++              <tr>
++                <td>Fastest path to one live server</td>
++                <td>Desktop install in seconds</td>
++                <td>Longer infra setup</td>
++              </tr>
++              <tr>
++                <td>Docker required</td>
++                <td>No</td>
++                <td>Often yes or expected</td>
++              </tr>
++              <tr>
++                <td>Built-in AI with live state</td>
++                <td>Yes</td>
++                <td>Rare</td>
++              </tr>
++              <tr>
++                <td>Multi-user billing and RBAC</td>
++                <td>No</td>
++                <td>Yes</td>
++              </tr>
++              <tr>
++                <td>Portable folder-scoped workflow</td>
++                <td>Yes</td>
++                <td>Usually no</td>
++              </tr>
++            </tbody>
++          </table>
++        </div>
++
++        <div class="compare-verdicts">
++          <article class="verdict-card primary">
++            <h3>Pick BlockPanel if</h3>
++            <ul class="bullet-list compact">
++              <li>You run one realm or a few isolated local realms</li>
++              <li>You want native UI, mod tools, map, AI, and backups together</li>
++              <li>You do not want Docker and daemon choreography</li>
++            </ul>
++          </article>
++          <article class="verdict-card">
++            <h3>Pick web stack if</h3>
++            <ul class="bullet-list compact">
++              <li>You sell hosting or need accounts, nodes, and billing</li>
++              <li>You manage fleets across machines</li>
++              <li>You need shared remote admin more than local speed</li>
++            </ul>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="faq-section" id="faq">
++      <div class="container section-shell">
++        <div class="section-heading">
++          <p class="section-tag">FAQ Sample</p>
++          <h2>Questions operators actually ask.</h2>
++          <p>Compact accordion style. Same depth, cleaner retrieval.</p>
++        </div>
++        <div class="faq-list">
++          <details class="faq-item" open>
++            <summary>Do I need Java installed first?</summary>
++            <p>
++              BlockPanel can scan for Java and point out required version by Minecraft release. For
++              sample concept, onboarding keeps this near setup flow instead of burying it deep in
++              FAQ.
++            </p>
++          </details>
++          <details class="faq-item">
++            <summary>What does AI context actually include?</summary>
++            <p>
++              Current state, player count, uptime, jar, RAM config, recent logs, plus saved
++              knowledge URLs. Not raw file access. Not secrets.
++            </p>
++          </details>
++          <details class="faq-item">
++            <summary>Can I run multiple servers?</summary>
++            <p>
++              Not from one process. Portable mode makes multi-instance workflow practical by keeping
++              each install folder-scoped.
++            </p>
++          </details>
++          <details class="faq-item">
++            <summary>Why keep desktop-only messaging so explicit?</summary>
++            <p>
++              Because honest positioning builds trust faster than pretending to be a multi-node
++              hosting panel. Sample copy keeps that boundary clear.
++            </p>
++          </details>
++        </div>
++      </div>
++    </section>
++
++    <section class="download-section" id="download">
++      <div class="container download-shell">
++        <div class="download-copy">
++          <p class="section-tag">Download Close</p>
++          <h2>One clear exit.</h2>
++          <p>
++            Sample concept reduces CTA sprawl. Hero points here. Middle of page supports. Final
++            close converts.
++          </p>
++        </div>
++        <div class="download-cards">
++          <article class="download-card featured">
++            <span class="card-badge">Recommended</span>
++            <h3>NSIS Installer</h3>
++            <p>Classic Windows setup. Start Menu shortcut. Clean uninstall.</p>
++            <a class="btn btn-primary" href="https://github.com/Otterdays/Block-Panel-V2-Public/releases" target="_blank" rel="noopener">Download .exe</a>
++          </article>
++          <article class="download-card">
++            <h3>MSI Package</h3>
++            <p>Alternate package for managed Windows environments and policy tooling.</p>
++            <a class="btn btn-secondary" href="https://github.com/Otterdays/Block-Panel-V2-Public/releases" target="_blank" rel="noopener">Download .msi</a>
++          </article>
++        </div>
++        <p class="download-note">
++          Separate sample site only. Original production landing page remains untouched in
++          <code>build/</code>.
++        </p>
++      </div>
++    </section>
++  </main>
++
++  <footer class="site-footer">
++    <div class="container footer-inner">
++      <div>
++        <strong>BlockPanel Concept Site</strong>
++        <p>Standalone redesign sample built as pure HTML, CSS, JS in separate folder.</p>
++      </div>
++      <div class="footer-links">
++        <a href="#top">Top</a>
++        <a href="#tour">Tour</a>
++        <a href="#trust">Trust</a>
++        <a href="#download">Download</a>
++      </div>
++    </div>
++  </footer>
++
++  <script src="script.js"></script>
++</body>
++</html>

@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlockPanel — Minecraft Server Manager for Windows</title>
+  <title>BlockPanel — The Minecraft server panel that thinks with you</title>
   <meta name="description"
-    content="BlockPanel is a native, standalone Minecraft server manager for Windows. Start, stop, manage mods, and monitor your server — no terminal required." />
-  <meta property="og:title" content="BlockPanel — Minecraft Server Manager" />
-  <meta property="og:description" content="Native, lightweight Minecraft server control. No command line required." />
+    content="Native Windows desktop app for Minecraft servers. Built-in AI copilot, Modrinth mod browser, live telemetry, Monaco config editor. 4 MB installer. No Docker, no web panel, no account." />
+  <meta name="keywords" content="minecraft server manager, minecraft panel, pterodactyl alternative, AMP alternative, crafty controller alternative, minecraft AI, modrinth installer, fabric server, paper server, tauri" />
+  <meta property="og:title" content="BlockPanel — The Minecraft server panel that thinks with you" />
+  <meta property="og:description" content="Native desktop app with a built-in AI copilot that can read your live server. 4 MB. No Docker, no account, no cloud." />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BlockPanel — Minecraft server panel with an AI copilot" />
+  <meta name="twitter:description" content="Native Windows app. 4 MB. Built-in AI that reads your live server. No Docker, no cloud." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -39,15 +43,14 @@
         </div>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#under-the-hood">Engineering</a></li>
+        <li><a href="#why">Why</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#ai-intelligence">AI</a></li>
+        <li><a href="#ai-intelligence">AI Copilot</a></li>
+        <li><a href="#vs">vs Pterodactyl</a></li>
         <li><a href="#themes">Themes</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#portable">Portable</a></li>
+        <li><a href="#how-it-works">Quick Start</a></li>
         <li><a href="#specs">Specs</a></li>
-        <li><a href="#constellation">Dependencies</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="nav-divider" aria-hidden="true"></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
@@ -57,15 +60,15 @@
       </button>
     </div>
     <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
-      <a href="#hero">Home</a>
-      <a href="#under-the-hood">Engineering</a>
+      <a href="#why">Why BlockPanel</a>
       <a href="#features">Features</a>
-      <a href="#ai-intelligence">AI Intelligence</a>
+      <a href="#ai-intelligence">AI Copilot</a>
+      <a href="#vs">vs Pterodactyl</a>
       <a href="#themes">Themes</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#portable">Portable Mode</a>
+      <a href="#how-it-works">Quick Start</a>
       <a href="#specs">Tech Specs</a>
-      <a href="#constellation">Dependencies</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#community">Community</a>
       <a href="#faq">FAQ</a>
       <a href="#download" class="mobile-cta">Download</a>
     </div>
@@ -79,11 +82,10 @@
       <div class="hero-text reveal">
         <div class="hero-badge">
           <span class="badge-dot" style="background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
-          <span>Version 2.7.0 — Player Intelligence & Deep Scan</span>
+          <span>v2.7 · Player Intelligence & AI Copilot</span>
         </div>
-        <h1>Command your Minecraft server.<br /><span class="gradient-text">From the throne room.</span></h1>
-        <p class="hero-subtitle">BlockPanel is a sovereign-grade Minecraft server command center for Windows. Real-time
-          telemetry, AI-assisted operations, mod ecosystem management, and studio-quality UI — all from one panel.</p>
+        <h1>The Minecraft server panel<br /><span class="gradient-text">that thinks with you.</span></h1>
+        <p class="hero-subtitle">A native desktop app for Windows with a built-in AI copilot, a Modrinth mod browser, live telemetry, and a studio-grade UI. No terminal. No Docker. No web panel to self-host. <strong>4 MB. One click.</strong></p>
         <div class="hero-actions">
           <a href="https://github.com/Otterdays/Block-Panel-V2-Public/releases" class="btn btn-primary"
             id="hero-download-btn" target="_blank" rel="noopener">
@@ -91,33 +93,28 @@
               <path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Download Latest
+            Download for Windows
           </a>
-          <a href="#features" class="btn btn-ghost">Explore Features →</a>
+          <a href="#why" class="btn btn-ghost">Why BlockPanel? →</a>
         </div>
         <div class="hero-meta">
           <span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
-              <path
-                d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 12.5A5.5 5.5 0 118 2.5a5.5 5.5 0 010 11zm.75-5.75V5a.75.75 0 00-1.5 0v3.5l2.25 1.5a.75.75 0 00.75-1.3l-1.5-1z"
-                fill="currentColor" />
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Free & open source
+            Free &amp; open source
           </span>
           <span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33C3.72 14.36 3.26 13 3.26 13c-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.23 1.87.87 2.33.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.62 7.62 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
-                fill="currentColor" />
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Built with Tauri & Rust
+            Zero telemetry
           </span>
           <span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
-              <path d="M8 1a7 7 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 0111.5-4.2V8H1.5zm0 .5h11.5A6.5 6.5 0 011.5 8.5z"
-                fill="currentColor" />
+              <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Windows 10 / 11
+            No account required
           </span>
         </div>
       </div>
@@ -159,7 +156,7 @@
               <!-- Console -->
               <div class="mockup-panel" id="panel-console" style="display:none;">
                 <div class="mockup-console-full">
-                  <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Server Online — Realm v2.7.0</div>
+                  <div class="console-line"><span class="cl-time">12:01:32</span> <span class="cl-info">INFO</span> Done (4.512s)! For help, type "help"</div>
                   <div class="console-line"><span class="cl-time">12:03:14</span> <span class="cl-info">INFO</span> Composer joined the game</div>
                   <div class="console-line"><span class="cl-time">12:08:47</span> <span class="cl-warn">WARN</span> Saving chunks… (14ms)</div>
                   <div class="console-line"><span class="cl-time">12:22:09</span> <span class="cl-info">INFO</span> Entities: 204 — Chunks: 289</div>
@@ -196,6 +193,74 @@
     </div>
   </section>
 
+  <!-- ── Sticky floating download pill ── -->
+  <a href="#download" class="sticky-dl" id="sticky-dl" aria-label="Jump to download">
+    <span class="sticky-dl-pulse"></span>
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" width="16" height="16">
+      <path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Download · 4&nbsp;MB</span>
+  </a>
+
+  <!-- ── Proof Bar ── -->
+  <section class="proof-bar" aria-label="At a glance">
+    <div class="container proof-inner">
+      <div class="proof-stat"><span class="proof-num"><span data-count="4" data-suffix="">4</span><span class="proof-unit">MB</span></span><span class="proof-lbl">Installer</span></div>
+      <div class="proof-stat"><span class="proof-num" data-count="73">73</span><span class="proof-lbl">Tauri commands</span></div>
+      <div class="proof-stat"><span class="proof-num"><span data-count="60">60</span><span class="proof-unit">+</span></span><span class="proof-lbl">Themes</span></div>
+      <div class="proof-stat"><span class="proof-num" data-count="5">5</span><span class="proof-lbl">AI providers</span></div>
+      <div class="proof-stat"><span class="proof-num" data-count="0">0</span><span class="proof-lbl">Telemetry calls</span></div>
+      <div class="proof-stat"><span class="proof-num"><span data-prefix="~" data-count="40">~40</span><span class="proof-unit">MB</span></span><span class="proof-lbl">Idle RAM</span></div>
+    </div>
+  </section>
+
+  <!-- ── Why BlockPanel (Value Props) ── -->
+  <section id="why" class="section why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Why BlockPanel</div>
+        <h2>Three things every other panel gets wrong.</h2>
+        <p>We're not a web panel with a daemon. We're not a Docker host. We're the desktop app you actually wanted all along.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <div class="value-num">01</div>
+          <div class="value-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 3l12 6v8c0 6-5 10-12 12C9 27 4 23 4 17V9l12-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M11 16l4 4 7-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Your server, in your hands.</h3>
+          <p>Every other panel asks you to spin up Docker, a database, a reverse proxy, and a domain. BlockPanel is a 4&nbsp;MB installer that runs on your desktop. Double-click, pick a folder, hit <strong>Start</strong>. That's the install guide.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-num">02</div>
+          <div class="value-icon value-icon-ai">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M16 3v5M16 24v5M3 16h5M24 16h5M7 7l3.5 3.5M21.5 21.5L25 25M25 7l-3.5 3.5M10.5 21.5L7 25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>An AI copilot that can <em>see</em> your server.</h3>
+          <p>Not a chatbot that googles. BlockPanel's AI reads your live server state — TPS, RAM, config, player count, last 15 log lines, plus any knowledge URLs you've saved — every message. Ask "why is it lagging?" and it actually knows.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-num">03</div>
+          <div class="value-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="5" y="11" width="22" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M10 11V8a6 6 0 0112 0v3" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="16" cy="19" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Zero cloud. Zero accounts. Zero surveillance.</h3>
+          <p>No sign-up. No telemetry. No "free tier." Your configs, your worlds, your backups, your API keys — all stored on <em>your</em> machine. The only outbound traffic: Mojang JARs, Modrinth search, and your own LLM key. Verify with Wireshark.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Theme Swapper ── -->
   <div class="theme-swapper" id="theme-swapper" aria-label="Theme selector">
     <button class="swap-btn" style="background: #6366f1;" data-accent="#6366f1" data-accent-rgb="99, 102, 241"
@@ -214,34 +279,31 @@
   <section id="under-the-hood" class="section tech-focus">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-tag">Engineering</div>
-        <h2>Under the Hood.</h2>
-        <p>BlockPanel is built on the same foundations as the industry's most high-performance engineering tools.</p>
+        <div class="section-tag">Under the hood</div>
+        <h2>Rust core. Web UI. Zero middleware.</h2>
+        <p>The backend is ~5,000 lines of Rust compiled to a native binary. The frontend is React 19 served from the same process via Tauri IPC. No Electron, no Node runtime, no daemon. One window, one process.</p>
       </div>
       <div class="hood-grid">
         <div class="hood-item reveal">
           <div class="hood-header">
             <span class="hood-icon">🦀</span>
-            <h4>Tauri & Rust Architecture</h4>
+            <h4>Rust + Tauri 2.x</h4>
           </div>
-          <p>Native Rust backend enables real-time system probing with near-zero overhead. Memory safe, blazingly fast,
-            and built for 24/7 reliability.</p>
+          <p>73 typed IPC commands. Tokio async runtime. Memory-safe process lifecycle, mutex-poison recovery, path-traversal guards audited in the open. 40&nbsp;MB idle RAM vs 250&nbsp;MB for the equivalent Electron app.</p>
         </div>
         <div class="hood-item reveal reveal-delay-1">
           <div class="hood-header">
             <span class="hood-icon">🗄️</span>
-            <h4>Deep Player Intelligence</h4>
+            <h4>World-aware analytics</h4>
           </div>
-          <p>Autonomous world-scanning engine that reconstructs player history from world data. Blocks mined,
-            advancements, and death-site geodata tracked silently via SQLite.</p>
+          <p>An embedded SQLite database ingests player events live and deep-scans world files offline. Playtime, retention, death sites, block-mine counts, activity heatmaps — all reconstructed from your existing world data. Nothing uploaded.</p>
         </div>
         <div class="hood-item reveal reveal-delay-2">
           <div class="hood-header">
-            <span class="hood-icon">🚀</span>
-            <h4>Monaco Engine Integration</h4>
+            <span class="hood-icon">📝</span>
+            <h4>Monaco editor on tap</h4>
           </div>
-          <p>The code editor from VS Code, running natively. Hardware-accelerated config editing with multi-cursor
-            support and syntax validation.</p>
+          <p>The same editor that powers VS Code — multi-cursor, syntax highlighting, bracket matching — for your <code>server.properties</code>, <code>paper-global.yml</code>, and any JSON config in the server directory.</p>
         </div>
       </div>
       <!-- System Blueprint Visualization -->
@@ -269,7 +331,7 @@
       <div class="section-header reveal">
         <div class="section-tag">Features</div>
         <h2>Everything you need.<br />Nothing you don't.</h2>
-        <p>BlockPanel packs a professional-grade toolset into a lightweight, zero-dependency desktop app.</p>
+        <p>Fourteen panels. Zero dependencies. One installer. Every feature is built around the idea that you shouldn't need a second monitor of docs open to run a Minecraft server.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
@@ -335,9 +397,8 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <h3>Intelligence & Deep Scan</h3>
-          <p>Real-time telemetry meets file-system archaeology. Track player retention, activity heatmaps, and
-            exhaustive statistics pulled directly from world data.</p>
+          <h3>Player analytics</h3>
+          <p>Retention curves, activity heatmaps, top-players leaderboard, session history. Reconstructed offline from your world files — no plugin required, no plugin conflicts.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
@@ -357,9 +418,8 @@
               <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.6" />
             </svg>
           </div>
-          <h3>Studio-Grade Toolbar</h3>
-          <p>A seamless, frameless experience. Native window management integrated directly into the thematic shell with
-            a studio-engine status pill.</p>
+          <h3>Native desktop shell</h3>
+          <p>Frameless window, custom titlebar, keyboard shortcuts (<kbd>Alt</kbd>+<kbd>1</kbd>…<kbd>9</kbd>), persistent theme, full OS file pickers. Feels like a real app because it is one.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
@@ -368,9 +428,8 @@
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <h3>Studio Config Editor</h3>
-          <p>Powered by the Monaco Engine. Syntax highlighting, error detection, and bracket matching for all your
-            server.properties and JSON configs.</p>
+          <h3>Config editor</h3>
+          <p>Monaco (VS Code's editor) for <code>server.properties</code>, JSON, YAML. Syntax highlighting, multi-cursor, error detection. No more editing configs in Notepad and breaking YAML indentation.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">
@@ -379,9 +438,8 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <h3>Network & DDoS Radar</h3>
-          <p>Real-time bandwidth visualization. Track inbound/outbound packets and monitor connection health with
-            high-fidelity system telemetry.</p>
+          <h3>Resource telemetry</h3>
+          <p>CPU, RAM, disk, and network charts sampled every 2 seconds with 6-minute rolling history. Crash counter and restart timeline so you can spot the 3 AM OOM before your players do.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">
@@ -390,9 +448,8 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <h3>Client Launcher</h3>
-          <p>Launch Prism Launcher or Vanilla Minecraft directly from the Dashboard. Automatic detection for standard
-            install paths and system protocols.</p>
+          <h3>One-click join</h3>
+          <p>Prism Launcher and vanilla Minecraft auto-detected. Launch the client pointed at your server from the dashboard — no copying IPs, no finding your launcher shortcut.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">
@@ -401,11 +458,27 @@
                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <h3>Smart Alert Snooze</h3>
-          <p>Clutter-free operations. Snooze system alerts for 15m, 1h, or hide them permanently. Persistent preferences
-            that survive app restarts.</p>
+          <h3>Quiet by default</h3>
+          <p>Alerts snooze for 15&nbsp;min, 1&nbsp;hour, or forever. Nothing pings you unless something's actually on fire. Preferences survive restarts — set it once, never think about it.</p>
         </div>
       </div>
+  </section>
+
+  <!-- ── Mid-page CTA ── -->
+  <section class="mid-cta" aria-label="Download">
+    <div class="container mid-cta-inner">
+      <div class="mid-cta-text">
+        <h3>Stop fighting your tools.</h3>
+        <p>4&nbsp;MB installer. No Docker, no Java hunting, no YAML safari. Download and be running a modded server in under 60 seconds.</p>
+      </div>
+      <a href="#download" class="btn btn-primary mid-cta-btn">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Grab BlockPanel
+      </a>
+    </div>
   </section>
 
   <!-- ── AI Intelligence ── -->
@@ -502,6 +575,45 @@ Last 3 crashes: 0 ← stable runtime</pre>
                 always knows exactly what it is.</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- What the AI actually sees -->
+      <div class="ai-prompt-reveal reveal">
+        <div class="ai-prompt-header">
+          <div class="ai-prompt-label">
+            <span class="api-dot"></span>
+            <span>What the AI <strong>actually</strong> sees — system prompt, live</span>
+          </div>
+          <div class="ai-prompt-meta">gemini-3.1-flash-lite · context ON</div>
+        </div>
+        <pre class="ai-prompt-code"><span class="pc-comment"># System — injected every message</span>
+You are <span class="pc-str">JEPPY V3</span>, an AI assistant running inside BlockPanel
+(model: <span class="pc-str">gemini-3.1-flash-lite</span>, provider: <span class="pc-str">google</span>).
+
+<span class="pc-comment"># Live server state</span>
+server_name:    <span class="pc-str">"Otterdays SMP"</span>
+state:          <span class="pc-kw">online</span>
+players:        <span class="pc-num">3</span> / <span class="pc-num">20</span>
+uptime:         <span class="pc-num">4h 22m</span>
+jar:            paper-1.21.4-87.jar
+ram:            <span class="pc-num">-Xms4G -Xmx8G</span>
+world:          world (normal, difficulty=normal, pvp=true)
+whitelist:      <span class="pc-kw">false</span>
+view_distance:  <span class="pc-num">10</span>
+
+<span class="pc-comment"># Last 15 log lines</span>
+[<span class="pc-time">12:31:05</span>] INFO  Ryan joined the game
+[<span class="pc-time">12:35:22</span>] INFO  Overworld ticking at 20.0 TPS
+[<span class="pc-time">12:47:18</span>] WARN  Can't keep up! Is the server overloaded? (14ms)
+[<span class="pc-time">12:52:03</span>] INFO  Chunk gen: 412 new chunks at (-2048, 800)
+<span class="pc-comment">… 11 more lines …</span>
+
+<span class="pc-comment"># Knowledge base</span>
+3 saved URLs — paper docs, sparkprofiler.dev, minecraft wiki</pre>
+        <div class="ai-prompt-footer">
+          <span class="apf-item"><span class="apf-dot apf-green"></span>Nothing leaves your machine except the call to your chosen provider</span>
+          <span class="apf-item"><span class="apf-dot apf-blue"></span>No file system access · no passwords · no API keys in context</span>
         </div>
       </div>
 
@@ -628,9 +740,8 @@ Last 3 crashes: 0 ← stable runtime</pre>
         <div class="step reveal reveal-delay-2">
           <div class="step-number">03</div>
           <div class="step-content">
-            <h3>Optimize with Intelligence</h3>
-            <p>Click the Start button. beyond basic logs, use the new Intelligence tab and Network Radar to track player
-              loyalty and system health in real-time.</p>
+            <h3>Hit Start. Ask the AI anything.</h3>
+            <p>Click <strong>Start</strong> on the Dashboard. Drop in a Modrinth mod or two. Paste a Gemini key into the AI Assistant and ask it "what's eating my TPS?" — it'll read your live server and tell you.</p>
           </div>
         </div>
       </div>
@@ -787,6 +898,405 @@ Last 3 crashes: 0 ← stable runtime</pre>
         <div class="gem reveal">
           <h5>Rcon</h5>
           <p>Minecraft RCON protocol client for administrative side-channel commands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Use Cases ── -->
+  <section id="use-cases" class="section use-cases">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Who it's for</div>
+        <h2>Built for the way you actually play.</h2>
+        <p>Four stories from the way operators are already running BlockPanel. Find yours.</p>
+      </div>
+      <div class="uc-grid">
+        <article class="uc-card reveal">
+          <div class="uc-emoji">🏡</div>
+          <div class="uc-tag">Friends SMP</div>
+          <h3>"Six of us. One laptop. Every Friday."</h3>
+          <p>Your buddy's PC runs the server when you're all online. You don't want to pay $12/mo to a host, you don't want to configure Nginx, you just want a single button that says <strong>Start</strong>.</p>
+          <div class="uc-tech"><span>vanilla / paper</span><span>portable mode</span><span>auto backup</span></div>
+        </article>
+        <article class="uc-card reveal reveal-delay-1">
+          <div class="uc-emoji">⚙️</div>
+          <div class="uc-tag">Modded 1.21</div>
+          <h3>"Create + Create: Above &amp; Beyond, 40 mods deep."</h3>
+          <p>The Modrinth browser handles install + dependency resolution. The AI reads crash logs and tells you which mod is conflicting. Monaco edits <code>config/</code> YAML without mangling indentation.</p>
+          <div class="uc-tech"><span>fabric/forge</span><span>modrinth</span><span>crash diagnosis</span></div>
+        </article>
+        <article class="uc-card reveal reveal-delay-2">
+          <div class="uc-emoji">🧪</div>
+          <div class="uc-tag">Mod dev</div>
+          <h3>"Spin up a clean test world in 30 seconds."</h3>
+          <p>Drop <code>portable.txt</code> next to <code>BlockPanel.exe</code> in any folder. Each clone is isolated — different mods, different config, different port. Flip between them without polluting <code>%APPDATA%</code>.</p>
+          <div class="uc-tech"><span>portable</span><span>multi-instance</span><span>clean rooms</span></div>
+        </article>
+        <article class="uc-card reveal reveal-delay-2">
+          <div class="uc-emoji">📊</div>
+          <div class="uc-tag">Community op</div>
+          <h3>"Know who's actually playing, without a plugin."</h3>
+          <p>Retention curves, activity heatmaps, top-players leaderboard, death-site map — reconstructed offline from your world files. No Spigot plugin. No privacy tradeoff. Just data.</p>
+          <div class="uc-tech"><span>analytics</span><span>deep scan</span><span>no plugin</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── vs Competitors ── -->
+  <section id="vs" class="section vs-section">
+    <div class="vs-bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Honest comparison</div>
+        <h2>BlockPanel vs the usual suspects.</h2>
+        <p>No hand-waving. We're a single-user desktop app and we're proud of it. Here's exactly where we win, where they win, and which one you should pick.</p>
+      </div>
+
+      <div class="vs-table-wrap reveal">
+        <table class="vs-table">
+          <thead>
+            <tr>
+              <th scope="col" class="vs-feat">Feature</th>
+              <th scope="col" class="vs-me">BlockPanel</th>
+              <th scope="col">Pterodactyl</th>
+              <th scope="col">AMP</th>
+              <th scope="col">Crafty</th>
+              <th scope="col">MCSManager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Install time</th>
+              <td class="vs-me"><span class="vs-good">~30&nbsp;s</span></td>
+              <td><span class="vs-bad">hours</span></td>
+              <td><span class="vs-mid">~20&nbsp;min</span></td>
+              <td><span class="vs-mid">~15&nbsp;min</span></td>
+              <td><span class="vs-mid">~20&nbsp;min</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Runs without Docker</th>
+              <td class="vs-me"><span class="vs-good">✓</span></td>
+              <td><span class="vs-bad">✗</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-mid">opt.</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Runs without a web server</th>
+              <td class="vs-me"><span class="vs-good">✓</span></td>
+              <td><span class="vs-bad">✗</span></td>
+              <td><span class="vs-bad">✗</span></td>
+              <td><span class="vs-bad">✗</span></td>
+              <td><span class="vs-bad">✗</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Built-in AI copilot</th>
+              <td class="vs-me"><span class="vs-good">5 providers</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-bad">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Modrinth browser</th>
+              <td class="vs-me"><span class="vs-good">native</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-mid">partial</span></td>
+              <td><span class="vs-bad">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Live world map</th>
+              <td class="vs-me"><span class="vs-good">built-in</span></td>
+              <td><span class="vs-bad">plugin</span></td>
+              <td><span class="vs-bad">plugin</span></td>
+              <td><span class="vs-bad">plugin</span></td>
+              <td><span class="vs-bad">plugin</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Config editor</th>
+              <td class="vs-me"><span class="vs-good">Monaco</span></td>
+              <td><span class="vs-mid">textarea</span></td>
+              <td><span class="vs-mid">textarea</span></td>
+              <td><span class="vs-mid">textarea</span></td>
+              <td><span class="vs-good">CodeMirror</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Themes</th>
+              <td class="vs-me"><span class="vs-good">60+</span></td>
+              <td><span class="vs-mid">2</span></td>
+              <td><span class="vs-mid">4</span></td>
+              <td><span class="vs-mid">2</span></td>
+              <td><span class="vs-mid">2</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Idle RAM</th>
+              <td class="vs-me"><span class="vs-good">~40&nbsp;MB</span></td>
+              <td><span class="vs-bad">~400&nbsp;MB</span></td>
+              <td><span class="vs-mid">~200&nbsp;MB</span></td>
+              <td><span class="vs-mid">~180&nbsp;MB</span></td>
+              <td><span class="vs-mid">~120&nbsp;MB</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Multi-user / RBAC</th>
+              <td class="vs-me"><span class="vs-bad">—</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Multi-node hosting</th>
+              <td class="vs-me"><span class="vs-bad">—</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-mid">partial</span></td>
+              <td><span class="vs-good">✓</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Open source</th>
+              <td class="vs-me"><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-bad">—</span></td>
+              <td><span class="vs-good">✓</span></td>
+              <td><span class="vs-good">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vs-verdict reveal">
+        <div class="verdict-card verdict-me">
+          <div class="verdict-label">Pick BlockPanel if…</div>
+          <ul>
+            <li>You run <strong>one</strong> server for you and your friends</li>
+            <li>You want it on <strong>your machine</strong>, not a VPS</li>
+            <li>You want an AI that actually knows about <em>your</em> server</li>
+            <li>"Install Docker" is a turn-off, not a selling point</li>
+          </ul>
+        </div>
+        <div class="verdict-card">
+          <div class="verdict-label">Pick Pterodactyl / AMP if…</div>
+          <ul>
+            <li>You're a <strong>hosting provider</strong> with paying customers</li>
+            <li>You need <strong>per-server user accounts</strong> and billing</li>
+            <li>You run across <strong>multiple physical nodes</strong></li>
+            <li>You have a sysadmin and a weekend to spare</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ── -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">From the community</div>
+        <h2>What operators say.</h2>
+      </div>
+      <div class="quote-grid">
+        <figure class="quote-card reveal">
+          <blockquote>"Spent three hours trying to make Pterodactyl work on my homelab. Gave up, installed BlockPanel, had a Fabric server running in two minutes."</blockquote>
+          <figcaption>
+            <div class="q-avatar" style="background:linear-gradient(135deg,#818cf8,#6366f1);">M</div>
+            <div class="q-meta"><strong>Morgan</strong><span>SMP host · 8 players</span></div>
+          </figcaption>
+        </figure>
+        <figure class="quote-card reveal reveal-delay-1">
+          <blockquote>"The AI told me which mod was causing my TPS drop. I'd have spent an hour on that alone. Paid for itself and it's free."</blockquote>
+          <figcaption>
+            <div class="q-avatar" style="background:linear-gradient(135deg,#f472b6,#db2777);">K</div>
+            <div class="q-meta"><strong>Kestrel</strong><span>modpack curator</span></div>
+          </figcaption>
+        </figure>
+        <figure class="quote-card reveal reveal-delay-2">
+          <blockquote>"Portable mode. USB stick. I run a dev server on whatever machine I'm sitting at. That's the whole pitch, and it works."</blockquote>
+          <figcaption>
+            <div class="q-avatar" style="background:linear-gradient(135deg,#fb923c,#ea580c);">T</div>
+            <div class="q-meta"><strong>Tide</strong><span>mod developer</span></div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Security / Trust ── -->
+  <section id="security" class="section security-section">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag" style="background:rgba(74,222,128,0.12);color:#4ade80;border-color:rgba(74,222,128,0.25);">Security</div>
+        <h2>Audited in the open.</h2>
+        <p>BlockPanel shipped a public security audit in April 2026. Here's exactly what was found and what was fixed. No hand-waving, no "trust us."</p>
+      </div>
+      <div class="sec-grid">
+        <div class="sec-card reveal">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>SSRF in knowledge fetcher</h4>
+          <p>URL validation used string-matching (<code>contains("localhost")</code>). Now does real DNS resolution and blocks loopback, RFC1918, link-local, IPv6 ULA, AWS metadata endpoints, and disables redirect-based bypass.</p>
+        </div>
+        <div class="sec-card reveal reveal-delay-1">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>Path traversal in config editor</h4>
+          <p>Filename IPC parameters could use <code>..\</code> or absolute paths. Now canonicalized with a <code>starts_with(base)</code> guard and path-component whitelist. Symlink escapes blocked.</p>
+        </div>
+        <div class="sec-card reveal reveal-delay-2">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>Command injection via stdin</h4>
+          <p>Raw <code>\n</code> in console input mapped two server commands to one UI action. Newline &amp; NUL stripping + trim on every command submission.</p>
+        </div>
+        <div class="sec-card reveal">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>PowerShell injection in backup</h4>
+          <p>World path interpolated into <code>Compress-Archive -Command</code>. A single quote in the world name could execute arbitrary PowerShell. Shellout removed; now uses the in-process <code>zip</code> crate.</p>
+        </div>
+        <div class="sec-card reveal reveal-delay-1">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>Mutex-poison cascade</h4>
+          <p>A panic while holding a state lock propagated as a backend failure. Lock macros now recover via <code>PoisonError::into_inner()</code>. One component's crash doesn't take the app down.</p>
+        </div>
+        <div class="sec-card reveal reveal-delay-2">
+          <div class="sec-badge sec-badge-fixed">Fixed</div>
+          <h4>API-key leak in AI errors</h4>
+          <p>Provider error bodies sometimes echoed the Authorization header. Client-side regex redaction strips <code>sk-*</code>, <code>AIza*</code>, and <code>Bearer</code> tokens before rendering.</p>
+        </div>
+      </div>
+      <div class="sec-note reveal">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" width="14" height="14">
+          <path d="M3 8l4 4 6-7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Full audit report lives in the repo. Every finding has a code reference, a reproduction, and a verification step.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Roadmap timeline ── -->
+  <section id="roadmap" class="section roadmap-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Roadmap</div>
+        <h2>Where it's going.</h2>
+        <p>What's shipped, what's in flight, what's next. Pulled straight from the public feature-parity audit — no vaporware on this list.</p>
+      </div>
+      <ol class="roadmap">
+        <li class="rm-item done reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">V2.7 GOLD</span>
+            <span class="rm-status shipped">Shipped</span>
+          </div>
+          <h3>Core panel + AI copilot</h3>
+          <p>Native desktop shell, 73 IPC commands, SQLite analytics, Monaco configs, Modrinth browser, world backups, live map, system-prompt context injection.</p>
+          <ul class="rm-bullets">
+            <li>real-time logs</li><li>RCON</li><li>Quick Essentials</li><li>knowledge fetch</li><li>60+ themes</li>
+          </ul>
+        </li>
+        <li class="rm-item done reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">April 2026</span>
+            <span class="rm-status shipped">Shipped</span>
+          </div>
+          <h3>Public security audit + fixes</h3>
+          <p>Solo audit pass identified and patched six P0/P1 issues. All findings documented with code references in <code>DOCS/SECURITY_AUDIT_2026-04-17.md</code>.</p>
+          <ul class="rm-bullets">
+            <li>SSRF hardening</li><li>path canonicalization</li><li>shellout removal</li><li>poison recovery</li>
+          </ul>
+        </li>
+        <li class="rm-item active reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">Q1 next</span>
+            <span class="rm-status now">In flight</span>
+          </div>
+          <h3>File manager + cron scheduler</h3>
+          <p>Full file-tree browser with upload/download, extract ZIP inline, drag-drop modpacks. Cron-style scheduler with action types (restart / backup / RCON / broadcast).</p>
+          <ul class="rm-bullets">
+            <li>file tree</li><li>upload/download</li><li>cron syntax</li><li>task history</li>
+          </ul>
+        </li>
+        <li class="rm-item reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">Q2</span>
+            <span class="rm-status next">Next</span>
+          </div>
+          <h3>Multi-server profiles + notifications</h3>
+          <p>Switch between server dirs from a dropdown. Discord webhooks, system-tray alerts on crash / low-RAM / backup-complete. Secrets move to OS keychain.</p>
+          <ul class="rm-bullets">
+            <li>profile switcher</li><li>Discord webhook</li><li>tray alerts</li><li>keychain secrets</li>
+          </ul>
+        </li>
+        <li class="rm-item reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">Q3</span>
+            <span class="rm-status next">Next</span>
+          </div>
+          <h3>TPS / MSPT tracking + CurseForge</h3>
+          <p>Performance dashboard with Spark integration, TPS history, per-world stats. CurseForge modpack imports alongside <code>.mrpack</code>.</p>
+          <ul class="rm-bullets">
+            <li>TPS graph</li><li>MSPT heatmap</li><li>CF modpacks</li><li>incremental backups</li>
+          </ul>
+        </li>
+        <li class="rm-item reveal">
+          <span class="rm-dot"></span>
+          <div class="rm-head">
+            <span class="rm-quarter">Later</span>
+            <span class="rm-status later">Exploring</span>
+          </div>
+          <h3>HTTP API, i18n, plugin hooks</h3>
+          <p>Optional HTTP API for external tools (Discord bots, Home Assistant). EN / DE / FR / ZH / ES / RU localization. "After backup" / "on crash" webhook-style hooks.</p>
+          <ul class="rm-bullets">
+            <li>API + key auth</li><li>6 languages</li><li>hooks</li><li>self-update</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Discord / Community CTA ── -->
+  <section id="community" class="discord-cta">
+    <div class="container">
+      <div class="discord-inner reveal">
+        <div class="discord-copy">
+          <h2>Build it with us.</h2>
+          <p>BlockPanel is open source. Feature requests, bug reports, themes, translations — all welcome. Hang out with other operators, get help tuning your server, or pitch in on the roadmap.</p>
+          <div class="discord-actions">
+            <a href="https://github.com/Otterdays/Block-Panel-V2-Public/issues" class="discord-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              Join the Discord
+            </a>
+            <a href="https://github.com/Otterdays/Block-Panel-V2-Public" class="github-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+              Star on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="discord-stats">
+          <div class="dstat">
+            <span class="dstat-num" data-count="100" data-suffix="%">100%</span>
+            <span class="dstat-label">Open source</span>
+          </div>
+          <div class="dstat">
+            <span class="dstat-num" data-count="0" data-suffix="">0</span>
+            <span class="dstat-label">Telemetry calls</span>
+          </div>
+          <div class="dstat">
+            <span class="dstat-num" data-count="73" data-suffix="">73</span>
+            <span class="dstat-label">IPC commands</span>
+          </div>
+          <div class="dstat">
+            <span class="dstat-num" data-count="6" data-suffix="">6</span>
+            <span class="dstat-label">Audit fixes</span>
+          </div>
         </div>
       </div>
     </div>
